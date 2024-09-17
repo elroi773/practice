@@ -1,0 +1,57 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+nav{
+    position: relative;
+    width: 475px;
+    height: 50px;
+    background: #222;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav a {
+    position: relative;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    padding: 0 23px;
+    z-index: 1;
+}
+
+nav span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95px;
+    height:100%;
+    background: linear-gradient(45deg , #194b4f,#33fffc);
+    border-radius: 10px;
+    transition:0.5s;
+}
+
+nav a:nth-child(1):hover~span{
+    left:0px;
+}
+nav a:nth-child(2):hover~span{
+    left:90px;
+}
+nav a:nth-child(3):hover~span{
+    left:180px;
+}
+nav a:nth-child(4):hover~span{
+    left:275px;
+}
+nav a:nth-child(5):hover~span{
+    left:380px;
+}
+nav a:nth-child(1):hover~span{
+    left:0px;
+}
