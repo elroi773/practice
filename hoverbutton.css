@@ -1,0 +1,75 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    margin: 0;
+}
+
+button {
+    position: relative;
+    padding:15px 30px;
+    font-size: 20px;
+    color:white;
+    background-color: transparent;
+    border: 2px solid #00fff0;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+button:hover{
+    box-shadow: 0 0 20px 10px rgba(0,255,240,0.7);
+}
+
+.stars{
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    box-shadow: 0 0 10px 5px #fff;
+    border-radius: 50%;
+    animation: sparkle 2s infinite ease-in-out;
+    opacity: 0;
+}
+
+@keyframes sparkle{
+    0%, 10%{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50%{
+        opacity: 1;
+        transform: scale(0.5);
+    }
+}
+
+.stars:nth-child(1) {
+    top: -20px;
+    left: -20px;
+    animation-delay: 0.2s;
+}
+
+.stars:nth-child(2) {
+    top: -20px;
+    right: -20px;
+    animation-delay: 0.4s;
+}
+
+.stars:nth-child(3) {
+    bottom: -20px;
+    left: -20px;
+    animation-delay: 0.6s;
+}
+
+.stars:nth-child(4) {
+    bottom: -20px;
+    right: -20px;
+    animation-delay: 0.8s;
+}
+
+button:hover .stars {
+    opacity: 1;
+}
