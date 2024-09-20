@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대신 전해드립니다</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap" rel="stylesheet">
+    <link href="대전.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <h1>대신 전해드립니다</h1> <!-- 페이지 제목 -->
+        
+        <!-- 메시지 입력을 위한 폼 -->
+        <form id="messageForm">
+            <textarea id="messageInput" placeholder="익명으로 전달하고 싶은 메시지를 적어주세요..." aria-label="익명 메시지 입력란"></textarea> <!-- 메시지 입력 칸 -->
+            <button type="button" onclick="submitMessage()">전송</button> <!-- 메시지 전송 버튼 -->
+        </form>
+        
+        <p id="errorMessage" style="color: red; display: none;">메시지를 입력하세요!</p> <!-- 에러 메시지 표시 -->
+        
+        <h2>전달된 메시지</h2> <!-- 전달된 메시지 목록 제목 -->
+        <div id="messages"> <!-- 메시지가 표시될 영역 -->
+            <!-- 메시지가 여기에 추가될 예정 -->
+        </div>
+    </div>
+    <script src="javaproject.js"></script>
+</body>
+</html>
