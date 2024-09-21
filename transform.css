@@ -1,0 +1,21 @@
+.div1:hover {
+    transform: scale(1,2);
+}
+.div2:hover {
+    transform: translateX(30px);
+}
+.div3:hover {
+    transform: translateX(30px) rotate(30deg);
+}
+.div4:hover {
+    transform: rotate(0.3turn);
+}
+.div5:hover {
+    transform: translate(20px, 20px);
+}
+.div6:hover {
+    transform: skew(30deg, 20deg);
+}
+.div7:hover {
+    transform: rotate(50deg);
+}
