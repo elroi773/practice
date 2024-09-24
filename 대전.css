@@ -1,6 +1,12 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 /* body에 전반적인 스타일을 적용 */
 body {
-    font-family: 'Hahmlet', serif; /* Google Fonts에서 설정한 폰트 사용 */
+    font-family: 'GmarketSansMedium';
     background-color: #f4f4f4; /* 배경 색상 설정 */
     margin: 0; /* 기본 margin 제거 */
     padding: 20px; /* 페이지 전체 padding */
@@ -8,6 +14,7 @@ body {
 
 /* 컨테이너에 스타일 적용 */
 .container {
+    font-family: 'GmarketSansMedium';
     max-width: 800px; /* 최대 너비 설정 */
     margin: 0 auto; /* 중앙 정렬 */
     background-color: white; /* 배경색 흰색 */
@@ -31,6 +38,7 @@ body {
 
 /* 제목 스타일 설정 */
 h1, h2 {
+    font-family: 'GmarketSansMedium';
     color: #4CAF50; /* 초록색 텍스트 */
     text-align: center; /* 가운데 정렬 */
 }
