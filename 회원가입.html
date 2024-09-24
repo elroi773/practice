@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+  
+    <link rel="stylesheet" href="회원가입.css">
+</head>
+<body>
+    <a>대신 전해드립니다 </a>
+    <div class="signup-container">
+        <h1 class="signup-title">회원가입</h1>
+        <form id="signupForm" class="signup-form">
+            <input type="text" id="username" placeholder="아이디" class="signup-input">
+            <input type="text" id="userschool" placeholder="학교" class="signup-input">
+            <input type="email" id="email" placeholder="이메일" class="signup-input">
+            <input type="password" id="password" placeholder="비밀번호" class="signup-input">
+            <input type="password" id="confirmPassword" placeholder="비밀번호 확인" class="signup-input">
+            <button type="button" onclick="submitSignup()" class="signup-button">가입하기</button>
+            <p id="errorMessage" class="error-message" style="display: none;">모든 필드를 채우고 비밀번호를 확인하세요</p>
+        </form>
+</body>
