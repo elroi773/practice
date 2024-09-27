@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <style>
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+body {
+    font-family: 'GmarketSansMedium';
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.post-form {
+    margin-bottom: 40px;
+}
+
+.post-form input, .post-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.post-form button {
+    padding: 10px 20px;
+    background-color: #4cae4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-form button:hover {
+    background-color: #45a048;
+}
+
+.posts {
+    margin-top: 20px;
+}
+
+.post {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+.post h3 {
+    margin: 0;
+    color: #4cae4f;
+}
+
+.post p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.post .author {
+    font-size: 0.9em;
+    color: #999;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.post-form {
+    margin-bottom: 40px;
+}
+
+.post-form input, .post-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.post-form button {
+    padding: 10px 20px;
+    background-color: #4cae4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-form button:hover {
+    background-color: #45a048;
+}
+
+.posts {
+    margin-top: 20px;
+}
+
+.post {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+.post h3 {
+    margin: 0;
+    color: #4cae4f;
+}
+
+.post p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.post .author {
+    font-size: 0.9em;
+    color: #999;
+}
+
+/* 익명/노익명 버튼 스타일 */
+.anonymous-toggle {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.anonymous-toggle button {
+    padding: 10px 20px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.anonymous-toggle button.active {
+    background-color: #4cae4f;
+    color: white;
+}
+        body {
+            font-family: 'GmarketSansMedium';
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .post {
+            border-bottom: 1px solid #ccc;
+            padding: 20px 0;
+        }
+
+        .post h3 {
+            margin: 0;
+            color: #4cae4f;
+        }
+
+        .post p {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .post .author {
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        .post .date {
+            font-size: 0.8em;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>커뮤니티 게시판</h1>
+        <div class="posts" id="posts">
+            <!-- 게시물이 여기에 표시됩니다 -->
+        </div>
+    </div>
+
+    <script>
+        // localStorage에서 게시물 가져오기
+        const posts = JSON.parse(localStorage.getItem('posts')) || [];
+
+        const postsDiv = document.getElementById('posts');
+
+        // 게시물 렌더링
+        posts.forEach(post => {
+            const postDiv = document.createElement('div');
+            postDiv.classList.add('post');
+
+            postDiv.innerHTML = `
+                <h3>${post.title}</h3>
+                <p>${post.content}</p>
+                <p class="author">작성자: ${post.author}</p>
+                <p class="date">${post.date}</p>
+            `;
+
+            postsDiv.prepend(postDiv);  // 최신 게시물이 위로 오도록 prepend 사용
+        });
+    </script>
+</body>
+</html>
