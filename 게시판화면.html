@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티 게시판</title>
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <h1>커뮤니티 게시판</h1>
+
+       
+
+        <!-- 게시물 작성 폼 -->
+        <div class="post-form">
+            <h2>새 게시물 작성하기</h2>
+            <input type="text" id="post-title" placeholder="제목을 입력하세요" required>
+            <textarea id="post-content" rows="5" placeholder="내용을 입력하세요" required></textarea>
+            <button onclick="addPost()">게시하기</button>
+        </div>
+
+         <!-- 로그인된 사용자 정보 -->
+         <div id="user-info">
+            로그인된 사용자: <span id="logged-in-user">홍길동</span>
+        </div>
+
+        <!-- 익명/노익명 전환 버튼 -->
+        <div class="anonymous-toggle">
+            <button id="anonymous-btn" onclick="toggleAnonymous(true)">익명</button>
+            <button id="no-anonymous-btn" class="active" onclick="toggleAnonymous(false)">노익명</button>
+        </div>
+
+        <!-- 게시물이 표시될 영역 -->
+        <div class="posts" id="posts">
+            <!-- 게시물이 여기에 추가됩니다 -->
+        </div>
+    </div>
+    <script src="게시판화면.js"></script>
+
+</body>
+</html>
