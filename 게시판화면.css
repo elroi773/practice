@@ -1,0 +1,323 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'GmarketSansMedium', Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.post-form {
+    margin-bottom: 40px;
+}
+
+.post-form input, .post-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.post-form button {
+    padding: 10px 20px;
+    background-color: #4cae4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-form button:hover {
+    background-color: #45a048;
+}
+
+.posts {
+    margin-top: 20px;
+}
+
+.post {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+.post h3 {
+    margin: 0;
+    color: #4cae4f;
+}
+
+.post p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.post .author {
+    font-size: 0.9em;
+    color: #999;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.post-form {
+    margin-bottom: 40px;
+}
+
+.post-form input, .post-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.post-form button {
+    padding: 10px 20px;
+    background-color: #4cae4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-form button:hover {
+    background-color: #45a048;
+}
+
+.posts {
+    margin-top: 20px;
+}
+
+.post {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+.post h3 {
+    margin: 0;
+    color: #4cae4f;
+}
+
+.post p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.post .author {
+    font-size: 0.9em;
+    color: #999;
+}
+
+/* 익명/노익명 버튼 스타일 */
+.anonymous-toggle {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.anonymous-toggle button {
+    padding: 10px 20px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.anonymous-toggle button.active {
+    background-color: #4cae4f;
+    color: white;
+}
+body {
+    font-family: 'GmarketSansMedium';
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.post-form {
+    margin-bottom: 40px;
+}
+
+.post-form input, .post-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.post-form button {
+    padding: 10px 20px;
+    background-color: #4cae4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-form button:hover {
+    background-color: #45a048;
+}
+
+.posts {
+    margin-top: 20px;
+}
+
+.post {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+.post h3 {
+    margin: 0;
+    color: #4cae4f;
+}
+
+.post p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.post .author {
+    font-size: 0.9em;
+    color: #999;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.post-form {
+    margin-bottom: 40px;
+}
+
+.post-form input, .post-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.post-form button {
+    padding: 10px 20px;
+    background-color: #4cae4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-form button:hover {
+    background-color: #45a048;
+}
+
+.posts {
+    margin-top: 20px;
+}
+
+.post {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+.post h3 {
+    margin: 0;
+    color: #4cae4f;
+}
+
+.post p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.post .author {
+    font-size: 0.9em;
+    color: #999;
+}
+
+/* 익명/노익명 버튼 스타일 */
+.anonymous-toggle {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.anonymous-toggle button {
+    padding: 10px 20px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.anonymous-toggle button.active {
+    background-color: #4cae4f;
+    color: white;
+}
