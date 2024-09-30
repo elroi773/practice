@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'IM_Hyemin-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family: 'IM_Hyemin-Bold';
+    text-align: center;
+}
+
+
+input[type="text"] {
+    font-family: 'IM_Hyemin-Bold';
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+input[type="text"]:hover {
+    background-color: #f0f0f0; /* 배경색 변경 */
+    border: 1px solid #4cae4f; /* 테두리 색상 변경 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 8px;
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Removes the top border on the first list item */
+    background-color: #f9f9f9;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+li:hover {
+    background-color: #f1f1f1;
+}
+
+a {
+    color: #4cae4f; /* 링크의 기본 색상 (김이레님이 좋아하는 초록색) */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+a:hover {
+    color: #2f8b37; /* 마우스를 올렸을 때의 색상 */
+    text-decoration: underline; /* 마우스를 올렸을 때 밑줄 추가 */
+}
+
+a:visited {
+    color: #6b9f6c; /* 방문한 링크의 색상 */
+}
+
+a:active {
+    color: #3e8c47; /* 클릭 시 활성화된 링크의 색상 */
+}
