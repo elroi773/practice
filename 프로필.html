@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 아이스브레이킹용 프로필</title>
+    <link rel="stylesheet" href="프로필.css">
+</head>
+<body>
+    <div class="profile-container">
+        <img class="pictureme" src="images/me2.jpg" alt="Profile Picture">
+        <h1>id: dobbyisfreee</h1>
+        
+        <section class="about-me">
+            <h2>나의 인생 영화</h2>
+            <p>영화 제목을 여기에 적어주세요: <span id="movie-name"></span></p>
+            <input type="text" id="movie-input" placeholder="영화를 입력하세요">
+            <button onclick="addMovie()">추가</button>
+        </section>
+
+        <section class="playlist">
+            <h2>나의 인생 플레이리스트</h2>
+            <ul id="playlist">
+                <li>음악을 추가하세요</li>
+            </ul>
+            <input type="text" id="song-input" placeholder="노래 제목을 입력하세요">
+            <button onclick="addSong()">추가</button>
+        </section>
+
+        <section class="tmi-zone">
+            <h2>나의 TMI 존</h2>
+            <textarea id="tmi-input" placeholder="당신의 TMI를 공유하세요!"></textarea>
+            <button onclick="addTMI()">TMI 추가</button>
+            <div id="tmi-display"></div>
+        </section>
+    </div>
+    
+    <script src="프로필.js"></script>
+</body>
+</html>
