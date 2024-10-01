@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'RixXladywatermelonR';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-4@1.0/RixXladywatermelonR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: 'RixXladywatermelonR';
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.todo-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #4cae4f;
+  }
+  
+  #new-task {
+    font-family: 'RixXladywatermelonR';
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  button {
+    font-family: 'RixXladywatermelonR';
+    background-color: #4cae4f;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a243;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  li button {
+    background-color: #ff5c5c;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  li button:hover {
+    background-color: #e04a4a;
+  }
+    
+  /* 기존 CSS 유지, 라디오 버튼 스타일 추가 및 순서 변경 */
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 가운데 정렬 */
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .radio-btn {
+    margin-left: 10px;
+    transform: scale(1.2); /* 라디오 버튼 크기 확대 */
+    accent-color: #4cae4f; /* 체크 색상 설정 */
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    color: #bbb;
+  }
+  
+  #remaining-tasks {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #4cae4f;
+  }
+  
