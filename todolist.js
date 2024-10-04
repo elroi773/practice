@@ -1,75 +1,145 @@
-// HTML 요소 선택
+// Memo 기능
+const memoInput = document.getElementById('memo');
+
+memoInput.addEventListener('input', function () {
+    localStorage.setItem('memo', memoInput.value);
+});
+
+window.addEventListener('load', function () {
+    memoInput.value = localStorage.getItem('memo') || '';
+});
+
+// To-Do List 기능
 const addTaskBtn = document.getElementById('add-task-btn');
 const newTaskInput = document.getElementById('new-task');
 const taskList = document.getElementById('task-list');
 const remainingTasks = document.getElementById('remaining-tasks');
+let draggedItem = null;
 
-// 남은 작업 업데이트 함수
 function updateRemainingTasks() {
-  const totalTasks = document.querySelectorAll('#task-list li').length;
-  const completedTasks = document.querySelectorAll('#task-list input:checked').length;
-  remainingTasks.textContent = `남은 작업: ${totalTasks - completedTasks}개 화이팅!`;
+    const totalTasks = document.querySelectorAll('#task-list li').length;
+    const completedTasks = document.querySelectorAll('#task-list input:checked').length;
+    remainingTasks.textContent = `남은 작업: ${totalTasks - completedTasks}개 화이팅!`;
 }
 
-// 할 일 추가 함수
 function addTask() {
-  const taskText = newTaskInput.value.trim();
+    const taskText = newTaskInput.value.trim();
 
-  if (taskText === "") {
-    alert("할 일을 입력해주세요!");
-    return;
-  }
+    if (taskText === "") {
+        alert("할 일을 입력해주세요!");
+        return;
+    }
 
-  const listItem = document.createElement('li');
-  listItem.innerHTML = `
-    <span>${taskText}</span>
-    <input type="radio" class="radio-btn">
-  `;
+    const listItem = document.createElement('li');
+    listItem.setAttribute('draggable', 'true');
+    listItem.innerHTML = `
+        <span>${taskText}</span>
+        <input type="radio" class="radio-btn">
+    `;
 
-  // 체크박스 클릭 시 완료 처리 및 항목 재정렬
-  listItem.querySelector('.radio-btn').addEventListener('click', function() {
-    listItem.classList.toggle('completed');
+    addDragAndDropEvents(listItem);
+
+    listItem.querySelector('.radio-btn').addEventListener('click', function () {
+        listItem.classList.toggle('completed');
+        updateRemainingTasks();
+    });
+
+    taskList.appendChild(listItem);
     updateRemainingTasks();
-    sortTasks(); // 항목을 재정렬하는 함수 호출
-  });
-
-  taskList.appendChild(listItem);
-
-  updateRemainingTasks();
-
-  newTaskInput.value = "";
-}
-
-// 할 일 정렬 함수
-function sortTasks() {
-  const tasks = Array.from(taskList.children);
-  
-  // 완료된 항목은 배열의 끝으로 이동
-  tasks.sort((a, b) => {
-    const aChecked = a.querySelector('.radio-btn').checked;
-    const bChecked = b.querySelector('.radio-btn').checked;
-    return aChecked - bChecked; // 체크된 항목을 뒤로 보냄
-  });
-
-  // 정렬된 항목을 다시 리스트에 추가
-  tasks.forEach(task => taskList.appendChild(task));
+    newTaskInput.value = "";
 }
 
 addTaskBtn.addEventListener('click', addTask);
 
-// enter 누르면 추가되는 기능
-newTaskInput.addEventListener('keypress', function(event) {
-  if (event.key === 'Enter') {
-    addTask();
-  }
+newTaskInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        addTask();
+    }
 });
 
-const memoInput = document.getElementById('memo');
+// To-Study List 기능
+const addStudyTaskBtn = document.getElementById('add-study-task-btn');
+const newStudyTaskInput = document.getElementById('new-study-task');
+const studyList = document.getElementById('study-list');
+const remainingStudyTasks = document.getElementById('remaining-study-tasks');
 
-memoInput.addEventListener('input', function() {
-    localStorage.setItem('memo', memoInput.value);
+function updateRemainingStudyTasks() {
+    const totalStudyTasks = document.querySelectorAll('#study-list li').length;
+    const completedStudyTasks = document.querySelectorAll('#study-list input:checked').length;
+    remainingStudyTasks.textContent = `남은 공부: ${totalStudyTasks - completedStudyTasks}개 화이팅!`;
+}
+
+function addStudyTask() {
+    const studyTaskText = newStudyTaskInput.value.trim();
+
+    if (studyTaskText === "") {
+        alert("공부할 내용을 입력해주세요!");
+        return;
+    }
+
+    const listItem = document.createElement('li');
+    listItem.setAttribute('draggable', 'true');
+    listItem.innerHTML = `
+        <span>${studyTaskText}</span>
+        <input type="radio" class="radio-btn">
+    `;
+
+    addDragAndDropEvents(listItem);
+
+    listItem.querySelector('.radio-btn').addEventListener('click', function () {
+        listItem.classList.toggle('completed');
+        updateRemainingStudyTasks();
+    });
+
+    studyList.appendChild(listItem);
+    updateRemainingStudyTasks();
+    newStudyTaskInput.value = "";
+}
+
+addStudyTaskBtn.addEventListener('click', addStudyTask);
+
+newStudyTaskInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        addStudyTask();
+    }
 });
 
-window.addEventListener('load', function() {
-    memoInput.value = localStorage.getItem('memo') || '';
-});
+// Drag & Drop 기능
+function addDragAndDropEvents(item) {
+    item.addEventListener('dragstart', function () {
+        draggedItem = item;
+        setTimeout(() => item.classList.add('dragging'), 0);
+    });
+
+    item.addEventListener('dragend', function () {
+        setTimeout(() => item.classList.remove('dragging'), 0);
+        draggedItem = null;
+    });
+
+    item.addEventListener('dragover', function (e) {
+        e.preventDefault();
+        const afterElement = getDragAfterElement(item.parentElement, e.clientY);
+        const dragging = document.querySelector('.dragging');
+        if (afterElement == null) {
+            item.parentElement.appendChild(dragging);
+        } else {
+            item.parentElement.insertBefore(dragging, afterElement);
+        }
+    });
+}
+
+function getDragAfterElement(container, y) {
+    const draggableElements = [...container.querySelectorAll('li:not(.dragging)')];
+
+    return draggableElements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if (offset < 0 && offset > closest.offset) {
+            return { offset: offset, element: child };
+        } else {
+            return closest;
+        }
+    }, { offset: Number.NEGATIVE_INFINITY }).element;
+}
