@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="memo-container">
-            <h2>메모</h2>
+            <h2>Memo</h2>
             <textarea id="memo" placeholder="메모를 입력하세요"></textarea>
         </div>
 
@@ -20,7 +20,25 @@
             <p id="remaining-tasks"></p>
             <ul id="task-list"></ul>
         </div>
+
+        <div class="tostudy-container">
+            <h1>To-Study List</h1>
+            <input type="text" id="new-study-task" placeholder="공부할 내용을 입력하세요">
+            <button id="add-study-task-btn">추가</button>
+            <p id="remaining-study-tasks"></p>
+            <ul id="study-list"></ul>
+        </div>
     </div>
     <script src="todolist.js"></script>
 </body>
 </html>
+
+
+<!--수정 할 목록 
+1: 체크한 목록은 아래로 내려가게
+2: 목록들 내가 드래그로 순서 옮길 수 있게 
+3: 타이머 함수 써서 얼마나 하고 있는지 
+4: 오늘의 명언 
+5: 시간 체크 
+6: 메모 할 수 있는 공간 
+7: 할일 과 study 따로 -->
