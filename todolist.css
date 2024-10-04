@@ -77,11 +77,11 @@ body{
     background-color: #e04a4a;
   }
     
-  /* 기존 CSS 유지, 라디오 버튼 스타일 추가 및 순서 변경 */
+  
 li {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* 가운데 정렬 */
+    align-items: center;
     padding: 10px;
     margin-bottom: 5px;
     background-color: #f9f9f9;
@@ -91,8 +91,8 @@ li {
   
   .radio-btn {
     margin-left: 10px;
-    transform: scale(1.2); /* 라디오 버튼 크기 확대 */
-    accent-color: #4cae4f; /* 체크 색상 설정 */
+    transform: scale(1.2); 
+    accent-color: #4cae4f; 
   }
   
   .completed {
@@ -105,4 +105,38 @@ li {
     font-weight: bold;
     color: #4cae4f;
   }
-  
+  h2{
+    color:#45ae4f;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* 메모와 To-Do 리스트 사이 간격 */
+}
+
+.memo-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-family: 'RixXladywatermelonR';
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.todo-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
