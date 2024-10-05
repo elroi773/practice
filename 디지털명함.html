@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="디지털명함.css">
 </head>
 <body>
-
-<div class="card">
-    <img src="images/me2.jpg" alt="프로필 이미지" class="profile-img">
-    <h1>김이레</h1>
-    <p>안녕하세요 삶의 질을 올리는 개발을 합니다.</p>
-    <p>이메일: s2457@e-mirim.hs.kr</p>
-    <div class="social-icons">
-        <a href="#" target="_blank">📧</a>
-        <a href="#" target="_blank">💼</a>
-        <a href="#" target="_blank">🌐</a>
+    <div class="card" id="card">
+        <h1>김이레</h1>
+        <img src = "images/me2.jpg" class="images">
+        <p>developer</p>
+        <p>이메일: s2457@e-mirim.hs.kr</p>
+        <button class="toggle-button" onclick="toggleDarkMode()">다크 모드 전환</button>
     </div>
-</div>
-
+    <script>
+        function toggleDarkMode() {
+            var card = document.getElementById('card');
+            document.body.classList.toggle('dark-mode');
+            card.classList.toggle('dark-mode');
+        }
+    </script>
 </body>
 </html>
