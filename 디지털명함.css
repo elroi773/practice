@@ -12,6 +12,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: background-color 0.3s;
 }
 .card {
     background-color: white;
@@ -20,35 +21,35 @@ body {
     width: 350px;
     padding: 20px;
     text-align: center;
-}
-.profile-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 h1 {
     color: #4cae4f;
-    margin-bottom: 10px;
 }
-p {
-    color: #777;
-    margin-bottom: 20px;
+.dark-mode {
+    background-color: #333;
+    color: white;
 }
-a {
-    text-decoration: none;
+.dark-mode h1 {
     color: #4cae4f;
-    font-size: 18px;
 }
-.social-icons {
-    margin-top: 20px;
+.toggle-button {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    background-color: #4cae4f;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
-.social-icons a {
-    margin: 0 10px;
-    color: #4cae4f;
-    font-size: 24px;
-    transition: color 0.3s;
+.toggle-button:hover {
+    background-color: #45a045;
 }
-.social-icons a:hover {
-    color: #45a045;
+
+.images{
+    float:left;
+    padding-bottom: 40px;
+    width: 100px;
+    height: 100px;
 }
