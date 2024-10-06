@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학교 스케줄 관리</title>
+    <link rel="stylesheet" href="시간표.css">
+</head>
+<body>
+    <h1>학교 스케줄 관리</h1>
+    <div class="schedule-container">
+        <table id="schedule-table">
+            <thead>
+                <tr>
+                    <th>교시</th>
+                    <th>월요일</th>
+                    <th>화요일</th>
+                    <th>수요일</th>
+                    <th>목요일</th>
+                    <th>금요일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1교시</td>
+                    <td><input type="text" id="mon-1"></td>
+                    <td><input type="text" id="tue-1"></td>
+                    <td><input type="text" id="wed-1"></td>
+                    <td><input type="text" id="thu-1"></td>
+                    <td><input type="text" id="fri-1"></td>
+                </tr>
+                <tr>
+                    <td>2교시</td>
+                    <td><input type="text" id="mon-2"></td>
+                    <td><input type="text" id="tue-2"></td>
+                    <td><input type="text" id="wed-2"></td>
+                    <td><input type="text" id="thu-2"></td>
+                    <td><input type="text" id="fri-2"></td>
+                </tr>
+                <tr>
+                    <td>3교시</td>
+                    <td><input type="text" id="mon-3"></td>
+                    <td><input type="text" id="tue-3"></td>
+                    <td><input type="text" id="wed-3"></td>
+                    <td><input type="text" id="thu-3"></td>
+                    <td><input type="text" id="fri-3"></td>
+                </tr>
+                <tr>
+                    <td>4교시</td>
+                    <td><input type="text" id="mon-4"></td>
+                    <td><input type="text" id="tue-4"></td>
+                    <td><input type="text" id="wed-4"></td>
+                    <td><input type="text" id="thu-4"></td>
+                    <td><input type="text" id="fri-4"></td>
+                </tr>
+                <tr>
+                    <td>5교시</td>
+                    <td><input type="text" id="mon-5"></td>
+                    <td><input type="text" id="tue-5"></td>
+                    <td><input type="text" id="wed-5"></td>
+                    <td><input type="text" id="thu-5"></td>
+                    <td><input type="text" id="fri-5"></td>
+                </tr>
+                <tr>
+                    <td>6교시</td>
+                    <td><input type="text" id="mon-6"></td>
+                    <td><input type="text" id="tue-6"></td>
+                    <td><input type="text" id="wed-6"></td>
+                    <td><input type="text" id="thu-6"></td>
+                    <td><input type="text" id="fri-6"></td>
+                </tr>
+                <tr>
+                    <td>7교시</td>
+                    <td><input type="text" id="mon-7" disabled></td>
+                    <td><input type="text" id="tue-7"></td>
+                    <td><input type="text" id="wed-7" disabled></td>
+                    <td><input type="text" id="thu-7"></td>
+                    <td><input type="text" id="fri-7" disabled></td>
+                </tr>
+                <tr>
+                    <td>방과 후</td>
+                    <td><input type="text" id="mon-after" disabled></td>
+                    <td><input type="text" id="tue-after" disabled></td>
+                    <td><input type="text" id="wed-after"></td>
+                    <td><input type="text" id="thu-after" disabled></td>
+                    <td><input type="text" id="fri-after" disabled></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <button onclick="saveSchedule()">스케줄 저장</button>
+    <script src="시간표.js"></script>
+</body>
+</html>
