@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'S-CoreDream-3Light';
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'S-CoreDream-3Light';
+    color: #4cae4f;
+}
+
+.schedule-container {
+    font-family: 'S-CoreDream-3Light';
+    display: inline-block;
+    margin-top: 20px;
+}
+
+table {
+    font-family: 'S-CoreDream-3Light';
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    font-family: 'S-CoreDream-3Light';
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+input[type="text"] {
+    font-family: 'S-CoreDream-3Light';
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+button{
+    font-family: 'S-CoreDream-3Light';
+    color:#333;
+    background-color: #c7eec8;
+    border-radius: 30px;
+    border-color: darkgreen;
+    width: 200px;
+    height: 50px;
+}
