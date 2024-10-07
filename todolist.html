@@ -8,37 +8,33 @@
 </head>
 <body>
     <div class="container">
-        <div class="memo-container">
+        <div class="quote-section">
+          <h2>랜덤 명언</h2>
+          <p>명언을 보려면 아래 버튼을 누르세요!</p>
+          <p id="author" class="author" class = "pwise"></p>
+          <button onclick="generateQuote()">새 명언 보기</button>
+        </div>
+        
+        <div class="main-section">
+          <div class="memo">
             <h2>Memo</h2>
-            <textarea id="memo" placeholder="메모를 입력하세요"></textarea>
+            <textarea placeholder="메모를 입력하세요"></textarea>
+          </div>
+      
+          <div class="todolist">
+            <h2>To-Do List</h2>
+            <input type="text" placeholder="할 일을 입력하세요" />
+            <button class="add">추가</button>
+          </div>
+      
+          <div class="studylist">
+            <h2>To-Study List</h2>
+            <input type="text" placeholder="공부할 내용을 입력하세요" />
+            <button class="add">추가</button>
+          </div>
         </div>
-
-        <div class="todo-container">
-            <h1>To-Do List</h1>
-            <input type="text" id="new-task" placeholder="할 일을 입력하세요">
-            <button id="add-task-btn">추가</button>
-            <p id="remaining-tasks"></p>
-            <ul id="task-list"></ul>
-        </div>
-
-        <div class="tostudy-container">
-            <h1>To-Study List</h1>
-            <input type="text" id="new-study-task" placeholder="공부할 내용을 입력하세요">
-            <button id="add-study-task-btn">추가</button>
-            <p id="remaining-study-tasks"></p>
-            <ul id="study-list"></ul>
-        </div>
-    </div>
+      </div>
+      
     <script src="todolist.js"></script>
 </body>
 </html>
-
-
-<!--수정 할 목록 
-1: 체크한 목록은 아래로 내려가게
-2: 목록들 내가 드래그로 순서 옮길 수 있게 
-3: 타이머 함수 써서 얼마나 하고 있는지 
-4: 오늘의 명언 
-5: 시간 체크 
-6: 메모 할 수 있는 공간 
-7: 할일 과 study 따로 -->
