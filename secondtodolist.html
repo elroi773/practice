@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist</title>
+    <style>
+        @font-face {
+    font-family: 'RixXladywatermelonR';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-4@1.0/RixXladywatermelonR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: 'RixXladywatermelonR';
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.todo-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #4cae4f;
+  }
+  
+  #new-task {
+    font-family: 'RixXladywatermelonR';
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  button {
+    font-family: 'RixXladywatermelonR';
+    background-color: #4cae4f;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a243;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  li button {
+    background-color: #ff5c5c;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  li button:hover {
+    background-color: #e04a4a;
+  }
+    
+  
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .radio-btn {
+    margin-left: 10px;
+    transform: scale(1.2); 
+    accent-color: #4cae4f; 
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    color: #bbb;
+  }
+  
+  #remaining-tasks {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #4cae4f;
+  }
+  h2{
+    color:#45ae4f;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* 메모와 To-Do 리스트 사이 간격 */
+}
+
+.memo-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-family: 'RixXladywatermelonR';
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.todo-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="memo-container">
+            <h2>메모</h2>
+            <textarea id="memo" placeholder="메모를 입력하세요"></textarea>
+        </div>
+
+        <div class="todo-container">
+            <h1>To-Do List</h1>
+            <input type="text" id="new-task" placeholder="할 일을 입력하세요">
+            <button id="add-task-btn">추가</button>
+            <p id="remaining-tasks"></p>
+            <ul id="task-list"></ul>
+        </div>
+    </div>
+    <script>
+        // HTML 요소 선택
+const addTaskBtn = document.getElementById('add-task-btn');
+const newTaskInput = document.getElementById('new-task');
+const taskList = document.getElementById('task-list');
+const remainingTasks = document.getElementById('remaining-tasks');
+
+// 남은 작업 업데이트 함수
+function updateRemainingTasks() {
+  const totalTasks = document.querySelectorAll('#task-list li').length;
+  const completedTasks = document.querySelectorAll('#task-list input:checked').length;
+  remainingTasks.textContent = `남은 작업: ${totalTasks - completedTasks}개 화이팅!`;
+}
+
+// 할 일 추가 함수
+function addTask() {
+  const taskText = newTaskInput.value.trim();
+
+  if (taskText === "") {
+    alert("할 일을 입력해주세요!");
+    return;
+  }
+
+  const listItem = document.createElement('li');
+  listItem.innerHTML = `
+    <span>${taskText}</span>
+    <input type="radio" class="radio-btn">
+  `;
+
+  // 체크박스 클릭 시 완료 처리 및 항목 재정렬
+  listItem.querySelector('.radio-btn').addEventListener('click', function() {
+    listItem.classList.toggle('completed');
+    updateRemainingTasks();
+    sortTasks(); // 항목을 재정렬하는 함수 호출
+  });
+
+  taskList.appendChild(listItem);
+
+  updateRemainingTasks();
+
+  newTaskInput.value = "";
+}
+
+// 할 일 정렬 함수
+function sortTasks() {
+  const tasks = Array.from(taskList.children);
+  
+  // 완료된 항목은 배열의 끝으로 이동
+  tasks.sort((a, b) => {
+    const aChecked = a.querySelector('.radio-btn').checked;
+    const bChecked = b.querySelector('.radio-btn').checked;
+    return aChecked - bChecked; // 체크된 항목을 뒤로 보냄
+  });
+
+  // 정렬된 항목을 다시 리스트에 추가
+  tasks.forEach(task => taskList.appendChild(task));
+}
+
+addTaskBtn.addEventListener('click', addTask);
+
+// enter 누르면 추가되는 기능
+newTaskInput.addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    addTask();
+  }
+});
+
+const memoInput = document.getElementById('memo');
+
+memoInput.addEventListener('input', function() {
+    localStorage.setItem('memo', memoInput.value);
+});
+
+window.addEventListener('load', function() {
+    memoInput.value = localStorage.getItem('memo') || '';
+});
+    </script>
+</body>
+</html>
