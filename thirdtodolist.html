@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist</title>
+    <style>
+        @font-face {
+  font-family: 'RixXladywatermelonR';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-4@1.0/RixXladywatermelonR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'RixXladywatermelonR';
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; /* 메모와 리스트 사이 간격 */
+}
+
+.memo-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  font-family: 'RixXladywatermelonR';
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.todo-container, .tostudy-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h1 {
+  color: #4cae4f;
+}
+
+#new-task, #new-study-task {
+  font-family: 'RixXladywatermelonR';
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  font-family: 'RixXladywatermelonR';
+  background-color: #4cae4f;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a243;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.dragging {
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.placeholder {
+  background-color: #f0f0f0;
+  border: 2px dashed #4cae4f;
+  height: 40px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.radio-btn {
+  margin-left: 10px;
+  transform: scale(1.2);
+  accent-color: #4cae4f;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #bbb;
+}
+
+#remaining-tasks, #remaining-study-tasks {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #4cae4f;
+}
+
+h2{
+  color:#4cae4f;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="memo-container">
+            <h2>Memo</h2>
+            <textarea id="memo" placeholder="메모를 입력하세요"></textarea>
+        </div>
+
+        <div class="todo-container">
+            <h1>To-Do List</h1>
+            <input type="text" id="new-task" placeholder="할 일을 입력하세요">
+            <button id="add-task-btn">추가</button>
+            <p id="remaining-tasks"></p>
+            <ul id="task-list"></ul>
+        </div>
+
+        <div class="tostudy-container">
+            <h1>To-Study List</h1>
+            <input type="text" id="new-study-task" placeholder="공부할 내용을 입력하세요">
+            <button id="add-study-task-btn">추가</button>
+            <p id="remaining-study-tasks"></p>
+            <ul id="study-list"></ul>
+        </div>
+    </div>
+    <script>
+        // Memo 기능
+const memoInput = document.getElementById('memo');
+
+memoInput.addEventListener('input', function () {
+    localStorage.setItem('memo', memoInput.value);
+});
+
+window.addEventListener('load', function () {
+    memoInput.value = localStorage.getItem('memo') || '';
+});
+
+// To-Do List 기능
+const addTaskBtn = document.getElementById('add-task-btn');
+const newTaskInput = document.getElementById('new-task');
+const taskList = document.getElementById('task-list');
+const remainingTasks = document.getElementById('remaining-tasks');
+let draggedItem = null;
+
+function updateRemainingTasks() {
+    const totalTasks = document.querySelectorAll('#task-list li').length;
+    const completedTasks = document.querySelectorAll('#task-list input:checked').length;
+    remainingTasks.textContent = `남은 작업: ${totalTasks - completedTasks}개 화이팅!`;
+}
+
+function addTask() {
+    const taskText = newTaskInput.value.trim();
+
+    if (taskText === "") {
+        alert("할 일을 입력해주세요!");
+        return;
+    }
+
+    const listItem = document.createElement('li');
+    listItem.setAttribute('draggable', 'true');
+    listItem.innerHTML = `
+        <span>${taskText}</span>
+        <input type="radio" class="radio-btn">
+    `;
+
+    addDragAndDropEvents(listItem);
+
+    listItem.querySelector('.radio-btn').addEventListener('click', function () {
+        listItem.classList.toggle('completed');
+        updateRemainingTasks();
+    });
+
+    taskList.appendChild(listItem);
+    updateRemainingTasks();
+    newTaskInput.value = "";
+}
+
+addTaskBtn.addEventListener('click', addTask);
+
+newTaskInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        addTask();
+    }
+});
+
+// To-Study List 기능
+const addStudyTaskBtn = document.getElementById('add-study-task-btn');
+const newStudyTaskInput = document.getElementById('new-study-task');
+const studyList = document.getElementById('study-list');
+const remainingStudyTasks = document.getElementById('remaining-study-tasks');
+
+function updateRemainingStudyTasks() {
+    const totalStudyTasks = document.querySelectorAll('#study-list li').length;
+    const completedStudyTasks = document.querySelectorAll('#study-list input:checked').length;
+    remainingStudyTasks.textContent = `남은 공부: ${totalStudyTasks - completedStudyTasks}개 화이팅!`;
+}
+
+function addStudyTask() {
+    const studyTaskText = newStudyTaskInput.value.trim();
+
+    if (studyTaskText === "") {
+        alert("공부할 내용을 입력해주세요!");
+        return;
+    }
+
+    const listItem = document.createElement('li');
+    listItem.setAttribute('draggable', 'true');
+    listItem.innerHTML = `
+        <span>${studyTaskText}</span>
+        <input type="radio" class="radio-btn">
+    `;
+
+    addDragAndDropEvents(listItem);
+
+    listItem.querySelector('.radio-btn').addEventListener('click', function () {
+        listItem.classList.toggle('completed');
+        updateRemainingStudyTasks();
+    });
+
+    studyList.appendChild(listItem);
+    updateRemainingStudyTasks();
+    newStudyTaskInput.value = "";
+}
+
+addStudyTaskBtn.addEventListener('click', addStudyTask);
+
+newStudyTaskInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        addStudyTask();
+    }
+});
+
+// Drag & Drop 기능
+function addDragAndDropEvents(item) {
+    item.addEventListener('dragstart', function () {
+        draggedItem = item;
+        setTimeout(() => item.classList.add('dragging'), 0);
+    });
+
+    item.addEventListener('dragend', function () {
+        setTimeout(() => item.classList.remove('dragging'), 0);
+        draggedItem = null;
+    });
+
+    item.addEventListener('dragover', function (e) {
+        e.preventDefault();
+        const afterElement = getDragAfterElement(item.parentElement, e.clientY);
+        const dragging = document.querySelector('.dragging');
+        if (afterElement == null) {
+            item.parentElement.appendChild(dragging);
+        } else {
+            item.parentElement.insertBefore(dragging, afterElement);
+        }
+    });
+}
+
+function getDragAfterElement(container, y) {
+    const draggableElements = [...container.querySelectorAll('li:not(.dragging)')];
+
+    return draggableElements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if (offset < 0 && offset > closest.offset) {
+            return { offset: offset, element: child };
+        } else {
+            return closest;
+        }
+    }, { offset: Number.NEGATIVE_INFINITY }).element;
+}
+    </script>
+</body>
+</html>
