@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'HakgyoansimAllimjangTTF-B';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimAllimjangTTF-B.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body{
+    font-family: 'HakgyoansimAllimjangTTF-B';
+    text-align: center;
+}
+h1{
+    color:#6b8e23;
+    box-shadow: 30%;
+}
+p{
+    color:#9dbb97;
+}
+input{
+    font-family: 'HakgyoansimAllimjangTTF-B';
+    border-radius: 10px;
+    border-color:#6b8e23;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+input:placeholder-shown{
+    color:#9dbb97;
+}
+
+button {
+    font-family: 'HakgyoansimAllimjangTTF-B';
+    size: 300px;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 30px;
+    background: linear-gradient(45deg, rgb(38, 127, 62), #c1f4b7);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    color: rgb(250, 255, 192);
+    font-size: 18px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(45deg, rgb(121, 127, 38), #6b8e23);
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
