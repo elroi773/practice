@@ -1,0 +1,35 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#maze-container {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#maze {
+    border-collapse: collapse;
+}
+
+#maze td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #333;
+}
+
+.wall {
+    background-color: #333;
+}
+
+.path {
+    background-color: #fff;
+}
+
+.player {
+    background-color: #4cae4f;
+}
+
+.goal {
+    background-color: #f4d03f;
+}
