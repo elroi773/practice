@@ -133,3 +133,46 @@ li {
 h2{
   color:#4cae4f;
 }
+
+.timer-container {
+  text-align: center;
+  background: white;
+  border-radius: 50%; /* 원형으로 만들기 */
+  width: 300px; /* 너비를 설정 */
+  height: 300px; /* 높이를 설정 */
+  display: flex; /* Flexbox로 중앙 정렬 */
+  flex-direction: column; /* 수직 방향으로 정렬 */
+  justify-content: center; /* 내용 중앙 정렬 */
+  align-items: center; /* 내용 중앙 정렬 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#display {
+  font-size: 48px;
+  margin: 0; /* 마진을 0으로 설정 */
+}
+
+.button-container {
+  display: flex; /* Flexbox를 사용하여 버튼을 가로로 배치 */
+  gap: 10px; /* 버튼 간 간격 설정 */
+  margin-top: 20px; /* 타이머와 버튼 간의 간격 설정 */
+}
+
+
+.timerh1{
+  color: #4cae4f;
+}
+#display {
+  font-family: 'RixXladywatermelonR';
+  font-size: 48px;
+  margin: 20px 0;
+  color: #367838;
+}
+
+button{
+  font-family: 'RixXladywatermelonR';
+  background-color: #f7fff7;
+  border-radius: 25px;
+  border-color: #295431;
+  
+}
