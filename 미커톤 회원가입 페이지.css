@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'TTHakgyoansimNamuL';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimNamuL.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+body {
+    font-family: 'TTHakgyoansimNamuL';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(images/Star.png);
+    background-size: cover;
+    background-repeat: repeat;
+    animation: moveBackground 20s linear infinite;
+}
+
+/* 배경 애니메이션 */
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100vw 0;
+    }
+}
+
+.signup {
+    font-family: 'TTHakgyoansimNamuL';
+    border: 1px solid rgba(255,255,255,0.1);
+    width: 350px; 
+    height: 550px;
+    background: url(images/background.jpg);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.75);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+form {
+    font-family: 'TTHakgyoansimNamuL';
+    width: 400px;
+    box-sizing: border-box;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center; /* 요소들을 중앙으로 정렬 */
+    border: 2px solid white; 
+    border-radius: 10px; 
+    background-color: rgba(245, 245, 245, 0.838);
+    box-shadow: 50%;
+}
+
+h1 {
+    font-family: 'TTHakgyoansimNamuL';
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #435283;
+    text-align: center;
+    width: 100%; /* h1을 수평 중앙으로 */
+}
+
+.label {
+    font-size: 16px; /* 레이블의 폰트 크기 조정 */
+    margin-bottom: 5px; /* 입력란과의 간격 */
+    align-self: flex-start; /* 왼쪽 위 정렬 */
+}
+
+input {
+    color: white;
+    font-family: 'TTHakgyoansimNamuL';
+    background: #3d4751; 
+    height: 35px;
+    width: 300px; /* 모든 input의 너비를 동일하게 300px로 설정 */
+    border-radius: 20px;
+    padding: 0 15px;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+
+input:focus {
+    background: #263641;
+    outline: none;
+}
+
+button {
+    color: white;
+    font-family: 'TTHakgyoansimNamuL';
+    background: linear-gradient(135deg, #7893de 0%, #001025 100%);
+    height: 40px;
+    width: 80%; 
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    text-align: center; /* 버튼 텍스트 중앙 정렬 */
+}
+
+button:hover {
+    background: linear-gradient(135deg, #001025, #2f3652);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
