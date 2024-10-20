@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로필</title>
+    <link rel="stylesheet" href="미커톤 프로필.css">
+</head>
+<body>
+    <div class="profile-header">
+        <img src="images/profile-icon.png" class="profile-icon">
+        <h1>우지영</h1>
+    </div>
+    <div class="date">D+21</div>    
+    <div class="container">
+        <div class="goal-section">
+            <button id="add-goal-btn" onclick="toggleGoalInput()">+</button>
+            <h2>이번 달 독서 목표</h2>
+            <ul id="goal-list">
+                <li>책 10권 읽기</li>
+                <li>해리포터 정독</li>
+                <li>100페이지 이상 읽기</li>
+                <li>도서관 이용하기</li>
+            </ul>
+
+            <div id="goal-input-box" style="display: none;">
+                <input type="text" id="new-goal" placeholder="새 목표 추가">
+                <button onclick="addGoal()">추가</button>
+            </div>
+        </div>
+        <div class = "button_container">
+            <button class="control-btn">배경음</button>
+            <br>
+            <button class="control-btn">테마</button>
+        </div>
+        
+        <div class="wishlist-section">
+            <button id="add-wishlist-btn" onclick="toggleWishlistInput()">+</button>
+            <h2>희망 도서</h2>
+            <ul id="wishlist">
+                <li>아기돼지 삼형제</li>
+                <li>언어의 온도</li>
+                <li>아몬드</li>
+                <li>불편한 편의점</li>
+            </ul>
+            
+            <div id="wishlist-input-box" style="display: none;">
+                <input type="text" id="new-wishlist-item" placeholder="새 도서 추가">
+                <button onclick="addWishlistItem()">추가</button>
+            </div>
+        </div>
+        
+    </div>
+    
+    <nav class="bottom-nav">
+        <ul>
+            <li><a href="#"><img src="images/calendar.png"></a></li>
+            <li><a href="#"><img src="images/Icon.png"></a></li>
+            <li><a href="#"><img src="images/home.png"></a></li>
+            <li><a href="#"><img src="images/Star3.png"></a></li>
+            <li><a href="#"><img src="images/user.png"></a></li>
+        </ul>
+    </nav>
+    <script>
+
+
+        function toggleGoalInput() {
+            var inputBox = document.getElementById("goal-input-box");
+            if (inputBox.style.display === "none") {
+                inputBox.style.display = "block";
+            } else {
+                inputBox.style.display = "none";
+            }
+        }
+
+
+        function addGoal() {
+            var newGoal = document.getElementById("new-goal").value;
+            if (newGoal) {
+                var listItem = document.createElement("li");
+                listItem.textContent = newGoal;
+                document.getElementById("goal-list").appendChild(listItem);
+                document.getElementById("new-goal").value = ""; // 입력 필드 초기화
+                document.getElementById("goal-input-box").style.display = "none"; // 입력 필드 숨기기
+            }
+        }
+
+
+        function toggleWishlistInput() {
+            var inputBox = document.getElementById("wishlist-input-box");
+            if (inputBox.style.display === "none") {
+                inputBox.style.display = "block";
+            } else {
+                inputBox.style.display = "none";
+            }
+        }
+
+
+        function addWishlistItem() {
+            var newWishlistItem = document.getElementById("new-wishlist-item").value;
+            if (newWishlistItem) {
+                var listItem = document.createElement("li");
+                listItem.textContent = newWishlistItem;
+                document.getElementById("wishlist").appendChild(listItem);
+                document.getElementById("new-wishlist-item").value = ""; // 입력 필드 초기화
+                document.getElementById("wishlist-input-box").style.display = "none"; // 입력 필드 숨기기
+            }
+        }
+
+    </script>
+</body>
+</html>
