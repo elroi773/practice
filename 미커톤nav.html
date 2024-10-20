@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style> /*추가*/
+      * {
+        text-decoration: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      nav {
+        background-color: rgb(255, 255, 255);
+      }
+      nav a {
+        text-transform: uppercase;
+        color: white;
+        font-size: 20px;
+        padding: 10px;
+      }
+      nav li {
+        display: inline-block;
+        margin: 0 8px;
+        line-height: 80px;
+      }
+      nav a img {
+        width: 50px;
+        height: 50px;
+        transition: all 0.3s ease;
+        filter: grayscale(100%); /* 아이콘 기본 회색 처리 */
+
+      }
+
+      nav a:hover img {
+        transform: scale(1.2); /* 확대 효과 */
+        filter: none; /* 색상 활성화 */
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* 그림자 */
+      }
+
+      nav a:hover {
+        background-color: #6a6a6a; /* 배경색 변화 */
+        border-radius: 50%;
+        padding: 10px;
+        transition: background-color 0.3s ease;
+      }
+
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#"><img src = "images/Calendar.png"></a></li>
+        <li><a href="#"><img src = "images/Icon.png"></a></li>
+        <li><a href="#"><img src ="images/home.png"></a></li>
+        <li><a href="#"><img src = "images/Star3.png"></a></li>
+        <li><a href="#"><img src = "images/User.png"></a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
