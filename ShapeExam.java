@@ -1,6 +1,7 @@
 package javaclass;
 
 interface Shape {
+	//interface의 데이터는 final static 만 가능 
     public abstract int getArea();
 
     public abstract int getCircum();
@@ -15,7 +16,7 @@ class Rectangle implements Shape {
         this.Width = Width;
     }
 
-    public int getArea() {
+   public int getArea() { //아들 쪽에서 public없으면 에러 뜸ㅋ 꼭 있어야 함 
         return Length * Width;
     }
 
