@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'TTBookendBatangR';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-2@1.0/TTBookendBatangR.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+h1{
+    padding-top: 30px;
+    font-family: 'TTBookendBatangR';
+    text-align: center;
+    font-size: 30px;
+}
+
+#countdown {
+    font-size: 2em;
+    color: #eda92e;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  
+  @keyframes fadeInUpSmooth {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); 
+    }
+  }
+  
+  .animated-text {
+    animation: fadeInUpSmooth 3.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+ }
+ 
