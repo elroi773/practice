@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소02</title>
+    <style>
+        h1::first-letter{
+            color:red;
+            font-size: 2em;
+            font-style: italic;
+        }
+        p::first-line{
+            color:blue;
+        }
+        li{
+            list-style: none;
+        }
+        #fruit li::before{
+            content: "✓";
+            color:green;
+            font-size: 1.1em;
+        }
+        #apple::after{
+            content:"🍎";
+        }
+        #cherry::after{
+            content: "🍒";
+        }
+        #grape::after{
+            content: "🍇";
+        }
+    </style>
+</head>
+<body>
+    <h1>Helloworld</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur 
+        adipisicing elit. Hic cumque nobis laborum fugiat, fuga voluptates
+        blanditiis odit! Totam voluptates eum officiis laboriosam 
+        voluptatibus expedita laudantium aliquid officia, 
+        sunt quia perferendis.
+    </p>
+    <ul>
+        <li id = "fruit">apple</li>
+        <li id = "fruit">cherry</li>
+        <li id = "fruit">grape</li>
+    </ul>
+</body>
+</html>
