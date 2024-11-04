@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상클래스</title>
+    <style>
+        a:link{
+            color:green;
+
+        }
+        a:hover{
+            color: red;
+            font-size: 1.1em;
+        }
+        a:active{
+            color: blue;
+            font-size: 1.1em;
+        }
+        li:hover{
+            background-color: aqua;
+        }li:not(:hover){
+            background-color: gray;
+        }
+        li:nth-child(2n){
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.google.com/">google</a>
+    <ul>
+        <li>This is #1</li>
+        <li>This is #2</li>
+        <li>This is #3</li>
+        <li>This is #4</li>
+        <li>This is #5</li>
+        <li>This is #6</li>
+        <li>This is #7</li>
+        <li>This is #8</li>
+        <li>This is #9</li>
+    </ul>
+</body>
+</html>
