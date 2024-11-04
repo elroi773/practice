@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 요소 01</title>
+    <style>
+        p::before{
+            content: "앞에 추가한 내용";
+            color:red;
+        }
+        P::after{
+            content:"뒤에 추가한 내용";
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <p>원래 쓰여 있던 내용</p>
+</body>
+</html>
