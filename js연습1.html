@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function over(obj){
+            obj.src = "./images/1.jpg";
+        }
+        function out(obj){
+            obj.src = "./images/2.jpg"
+        }
+    </script>
+</head>
+<body>
+    <h3>마우스 올려 보세유</h3>
+    <img src = "./images/1.jpg" alt = "이미지" onmouseover="over(this)" onmouseout="out(this)">
+</body>
+</html>
