@@ -1,0 +1,26 @@
+ul{
+    list-style-type: none;
+    height: 50px;
+}
+
+.hamburger{
+    margin-top:5px;
+    height: 10px;
+    width: 50px;
+    border-radius: 20% / 90%;
+    background-color: bisque;
+    transition: 1s;
+    position: relative;
+}
+
+ul:hover li:nth-child(1){
+    transform: translateY(15px) rotate(45deg);
+}
+
+ul:hover li:nth-child(3){
+    transform: translateY(-15px) rotate(-45deg);
+}
+
+ul:hover li:nth-child(2){
+    transform: rotate(-45deg);
+}
