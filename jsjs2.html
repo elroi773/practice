@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 기능</title>
+</head>
+<body>
+    <h2 id="test">로그인 상태: 없음</h2>
+    <script>
+        
+        let admin = ["Kim", "Lee", "Choi"];
+        let password = ["1234", "4567", "4344"];
+        
+        
+        let inputId = prompt("아이디를 입력하시오:", "");
+        let inputPassword = prompt("비밀번호를 입력하시오:", "");
+        
+        
+        
+        for (let i = 0; i < admin.length; i++) {
+            if (inputId === admin[i] && inputPassword === password[i]) {
+                isLoggedIn = true; 
+                break;
+            }
+        }
+        
+        // 결과 출력
+        if (isLoggedIn) {
+            document.getElementById("test").innerHTML = "로그인 성공! 환영합니다.";
+        } else {
+            document.getElementById("test").innerHTML = "로그인 실패! 다시 시도해주세요.";
+        }
+    </script>
+</body>
+</html>
