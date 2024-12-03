@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id = "test"></h2>
+
+    <script>
+        class Dog{
+            constructor(name,adoptedYear){
+                this.name = name;
+                this.adoptedYear = adoptedYear;
+            }
+
+            age(){
+                let date = new Date();
+                return date.getFullYear() - this.adoptedYear;
+            }
+        }
+        let myDog = new Dog("Mary",2013);
+        document.getElementById("test").innerHTML = "나의 강아지의 이름은" + myDog.name + "이고 나이는" + myDog.age() + "살입니다.";
+    </script>
+</body>
+</html>
