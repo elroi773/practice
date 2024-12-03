@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Car(model, speed, color) {
+            this.model = model;
+            this.speed = speed;
+            this.color = color;
+
+            this.brake = function () {
+                this.speed -= 10;
+            }
+            this.accel = function () {
+                this.speed += 10;
+            }
+        }
+
+        myCar = new Car("520d", 60, "red");
+        document.write("모델:" + myCar.model + "속도" + myCar.speed + "</br>");
+        myCar.accel();
+
+        document.write("모델:" + myCar.model + "속도" + myCar.speed + "<br/>");
+        myCar.brake();
+
+        document.write("모델:" + myCar.model + "속도:" + myCar.speed + "<br/>");
+
+        myCar.turbo = true;
+        myCar.showModel = function(){
+            alert("모델은"+this.model+"입니다");
+        }
+
+        
+
+    </script>
+</body>
+
+</html>
