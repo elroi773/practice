@@ -1,0 +1,96 @@
+body{
+    margin:0px; 
+ }
+ h1{
+     font-family: 'GmarketSansMedium';
+     color:#2b3b6f;
+     padding-left: 30px;
+ }
+ .textexplain{
+     font-size: small;
+     color:#2b3b6f;
+     text-shadow: 30%;
+ }
+ 
+ .textexplain2{
+     font-size: smaller;
+     color:#2b3b6f;
+     text-shadow: 30%;
+ }
+ /* 전체 메뉴의 스타일 */
+ a.menu {
+     font-family: 'GmarketSansMedium';
+     color: #2b3b6f;
+     display: block;
+     padding: 10px 20px;
+     background-color: #4c63af;
+     color: white;
+     text-align: center;
+     text-decoration: none;
+     font-weight: bold;
+     border-radius: 5px;
+ }
+ 
+ a.menu:hover {
+     background-color: #4c63af;
+ }
+ 
+ /* 네비게이션 메뉴의 스타일 */
+ nav.textmenu {
+     display: flex;
+     justify-content: center; /* 가로로 가운데 정렬 */
+     align-items: center; /* 세로 중앙 정렬 */
+     padding: 10px;
+     background-color: #ededff;
+     border-radius: 5px;
+     gap: 10px; /* 각 링크 간 간격 조정 */
+     border-radius: 40px;
+ }
+ 
+ /* 링크 스타일 */
+ nav.textmenu a {
+     padding: 12px 20px;
+     color: #333;
+     text-decoration: none;
+     font-size: 16px;
+     transition: color 0.3s ease, background-color 0.3s ease;
+     text-align: center;
+     border-radius: 4px;
+ }
+ 
+ /* hover 효과 */
+ nav.textmenu a {
+     display: inline-block; /* 블록으로 설정해 효과가 자연스럽게 적용되도록 */
+     position: relative; /* ::before 및 ::after를 사용하기 위해 position 추가 */
+     text-decoration: none; /* 밑줄 제거 */
+     color: inherit; /* 기본 텍스트 색상 유지 */
+     transition: transform 0.3s ease, color 0.3s ease;
+ }
+ 
+ nav.textmenu a:hover {
+     color:#4c63af;
+     transform: translateY(-3px) scale(1.1); /* 위로 살짝 이동하며 확대 */
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 더 깊은 그림자 효과 */
+ }
+ 
+ nav.textmenu a::before {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     width: 0;
+     height: 3px;
+     background-color: #4c63af; /* 하이라이트 색상 */
+     transition: width 0.3s ease, left 0.3s ease;
+ }
+ 
+ nav.textmenu a:hover::before {
+     width: 100%; /* 전체 너비로 확장 */
+     left: 0; /* 초기 위치로 이동 */
+ }
+ 
+ 
+ /* 마지막 빈 span은 숨김 처리 */
+ nav.textmenu span {
+     display: none;
+ }
