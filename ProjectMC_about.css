@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    animation: fadeIn 1.5s ease-in;
+    margin: 0px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    animation: fadeIn 1.5s ease-in;
+    font-family: 'GmarketSansMedium';
+    color: #2b3b6f;
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    animation: fadeIn 1.5s ease-in;
+    font-family: 'GmarketSansMedium';
+}
+
+li {
+    animation: fadeIn 1.5s ease-in;
+    font-family: 'GmarketSansMedium';
+}
+
+.textexplain {
+    animation: fadeIn 1.5s ease-in;
+    font-size: small;
+    color: #2b3b6f;
+    text-shadow: 30%;
+}
+
+.textexplain2 {
+    animation: fadeIn 1.5s ease-in;
+    font-size: smaller;
+    color: #2b3b6f;
+    text-shadow: 30%;
+}
+
+/* 전체 메뉴의 스타일 */
+a.menu {
+    animation: fadeIn 1.5s ease-in;
+    font-family: 'GmarketSansMedium';
+    color: #2b3b6f;
+    display: block;
+    padding: 10px 20px;
+    background-color: #4c63af;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+a.menu:hover {
+    background-color: #4c63af;
+}
+
+/* 네비게이션 메뉴의 스타일 */
+nav.textmenu {
+    font-family: 'GmarketSansMedium';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #ededff;
+    border-radius: 40px;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* 링크 스타일 */
+nav.textmenu a {
+    animation: fadeIn 1.5s ease-in;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* hover 효과 */
+nav.textmenu a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav.textmenu a:hover {
+    color: #4c63af;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+nav.textmenu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #4c63af;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav.textmenu a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+/* 마지막 빈 span은 숨김 처리 */
+nav.textmenu span {
+    display: none;
+}
+
+.skills {
+    animation: fadeIn 1.5s ease-in;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* 투명도 추가 */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+    backdrop-filter: blur(10px); /* 블러 효과 추가 */
+}
+
+
+.skills h1 {
+    animation: fadeIn 1.5s ease-in;
+    text-align: center;
+    color: #5367a8;
+    margin-bottom: 20px;
+}
+
+.skills h2 {
+    animation: fadeIn 1.5s ease-in;
+    margin-top: 20px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.skills_container {
+    animation: fadeIn 1.5s ease-in;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.skills_section {
+    animation: fadeIn 1.5s ease-in;
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    background: #f9f9ff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.skills .tools {
+    animation: fadeIn 1.5s ease-in;
+    margin-top: 20px;
+}
+
+.skills .tools_section {
+    animation: fadeIn 1.5s ease-in;
+    flex: 1 1 100%;
+    background: #f9f9ff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.skills_section ul {
+    animation: fadeIn 1.5s ease-in;
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0;
+    text-align: left;
+}
+
+.skills_section ul li {
+    animation: fadeIn 1.5s ease-in;
+    margin: 5px 0;
+    color: #555;
+    line-height: 1.6;
+}
+
+.front {
+    animation: fadeIn 1.5s ease-in;
+    font-style: bold;
+    color: #2b3b6f;
+}
+
+.skills_container {
+    animation: fadeIn 1.5s ease-in;
+    text-align: center;
+}
+
+.skill_h2 {
+    animation: fadeIn 1.5s ease-in;
+    font-family: 'GmarketSansMedium';
+    border-bottom: 1px solid #21262d;
+    color: #2b3b6f;
+    margin-left: 40px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
