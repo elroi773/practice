@@ -1,0 +1,213 @@
+/* Font Styles */
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+}
+
+h1 {
+    font-family: 'GmarketSansMedium';
+    color: #2b3b6f;
+    padding-left: 30px;
+}
+
+h3 {
+    font-family: 'GmarketSansMedium';
+    text-align: center;
+    color: #d6e2ff;
+}
+
+p {
+    margin-bottom: 50px;
+    color: #6369ab;
+    text-align: center;
+}
+
+.title {
+    color: #4a5ba5;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.whatcanido {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2b3b6f;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Navigation Menu */
+nav.textmenu {
+    font-family: 'GmarketSansMedium';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #ededff;
+    border-radius: 40px;
+    gap: 10px;
+}
+
+nav.textmenu a {
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav.textmenu a:hover {
+    color: #4c63af;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+nav.textmenu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #4c63af;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav.textmenu a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+nav.textmenu span {
+    display: none;
+}
+
+.me {
+    margin: 20px auto;
+    width: 300px;
+    height: auto;
+    border-radius: 100%;
+    display: block;
+    animation: tilt-in-top-2 2s ease-in-out forwards;
+}
+
+/* Animations */
+@keyframes bounceUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    80% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes tilt-in-top-2 {
+    0% {
+        transform: rotateY(-30deg) translateY(-300px) skewY(30deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotateY(0deg) translateY(0) skewY(0deg);
+        opacity: 1;
+    }
+}
+
+.animated-img {
+    animation: bounceUp 1.8s ease-out;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.animated-img:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.animate-bounce {
+    animation: bounceUp 1.5s ease-out;
+}
+
+/* Skills Section */
+.skills {
+    font-family: 'GmarketSansMedium';
+    float: right;
+}
+
+.skills_container {
+    border: 1px solid #2b3b6f;
+    background-color: #ffffff;
+    border-radius: 30px;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.skills {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.skills h1 {
+    text-align: center;
+    color: #5367a8;
+}
+.skills h2 {
+    margin-top: 20px;
+    color: #333;
+    text-align: center;
+}
+.skills ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+.skills ul li {
+    margin: 5px 0;
+    color: #555;
+}
+.title {
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+    margin-top: 30px;
+    animation: fadeIn 1.5s ease-in-out;
+}
