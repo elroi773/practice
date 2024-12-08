@@ -1,96 +1,210 @@
-body{
-    margin:0px; 
- }
- h1{
-     font-family: 'GmarketSansMedium';
-     color:#2b3b6f;
-     padding-left: 30px;
- }
- .textexplain{
-     font-size: small;
-     color:#2b3b6f;
-     text-shadow: 30%;
- }
- 
- .textexplain2{
-     font-size: smaller;
-     color:#2b3b6f;
-     text-shadow: 30%;
- }
- /* 전체 메뉴의 스타일 */
- a.menu {
-     font-family: 'GmarketSansMedium';
-     color: #2b3b6f;
-     display: block;
-     padding: 10px 20px;
-     background-color: #4c63af;
-     color: white;
-     text-align: center;
-     text-decoration: none;
-     font-weight: bold;
-     border-radius: 5px;
- }
- 
- a.menu:hover {
-     background-color: #4c63af;
- }
- 
- /* 네비게이션 메뉴의 스타일 */
- nav.textmenu {
-     display: flex;
-     justify-content: center; /* 가로로 가운데 정렬 */
-     align-items: center; /* 세로 중앙 정렬 */
-     padding: 10px;
-     background-color: #ededff;
-     border-radius: 5px;
-     gap: 10px; /* 각 링크 간 간격 조정 */
-     border-radius: 40px;
- }
- 
- /* 링크 스타일 */
- nav.textmenu a {
-     padding: 12px 20px;
-     color: #333;
-     text-decoration: none;
-     font-size: 16px;
-     transition: color 0.3s ease, background-color 0.3s ease;
-     text-align: center;
-     border-radius: 4px;
- }
- 
- /* hover 효과 */
- nav.textmenu a {
-     display: inline-block; /* 블록으로 설정해 효과가 자연스럽게 적용되도록 */
-     position: relative; /* ::before 및 ::after를 사용하기 위해 position 추가 */
-     text-decoration: none; /* 밑줄 제거 */
-     color: inherit; /* 기본 텍스트 색상 유지 */
-     transition: transform 0.3s ease, color 0.3s ease;
- }
- 
- nav.textmenu a:hover {
-     color:#4c63af;
-     transform: translateY(-3px) scale(1.1); /* 위로 살짝 이동하며 확대 */
-     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 더 깊은 그림자 효과 */
- }
- 
- nav.textmenu a::before {
-     content: '';
-     position: absolute;
-     bottom: 0;
-     left: 50%;
-     width: 0;
-     height: 3px;
-     background-color: #4c63af; /* 하이라이트 색상 */
-     transition: width 0.3s ease, left 0.3s ease;
- }
- 
- nav.textmenu a:hover::before {
-     width: 100%; /* 전체 너비로 확장 */
-     left: 0; /* 초기 위치로 이동 */
- }
- 
- 
- /* 마지막 빈 span은 숨김 처리 */
- nav.textmenu span {
-     display: none;
- }
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    animation: fadeIn 1.5s ease-in;
+    margin: 0px;
+}
+
+h1 {
+    animation: fadeIn 1.5s ease-in;
+    font-family: 'GmarketSansMedium';
+    color: #2b3b6f;
+    padding-left: 30px;
+}
+
+.textexplain {
+    animation: fadeIn 1.5s ease-in;
+    font-size: small;
+    color: #2b3b6f;
+    text-shadow: 30%;
+}
+
+.textexplain2 {
+    animation: fadeIn 1.5s ease-in;
+    font-size: smaller;
+    color: #2b3b6f;
+    text-shadow: 30%;
+}
+
+/* 전체 메뉴의 스타일 */
+a.menu {
+    animation: fadeIn 1.5s ease-in;
+    font-family: 'GmarketSansMedium';
+    color: #2b3b6f;
+    display: block;
+    padding: 10px 20px;
+    background-color: #4c63af;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+a.menu:hover {
+    background-color: #4c63af;
+}
+
+/* 네비게이션 메뉴의 스타일 */
+nav.textmenu {
+    animation: fadeIn 1.5s ease-in;
+    font-family: 'GmarketSansMedium';
+    display: flex;
+    justify-content: center;
+    /* 가로로 가운데 정렬 */
+    align-items: center;
+    /* 세로 중앙 정렬 */
+    padding: 10px;
+    background-color: #ededff;
+    border-radius: 5px;
+    gap: 10px;
+    /* 각 링크 간 간격 조정 */
+    border-radius: 40px;
+}
+
+/* 링크 스타일 */
+nav.textmenu a {
+    animation: fadeIn 1.5s ease-in;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* hover 효과 */
+nav.textmenu a {
+    display: inline-block;
+    /* 블록으로 설정해 효과가 자연스럽게 적용되도록 */
+    position: relative;
+    /* ::before 및 ::after를 사용하기 위해 position 추가 */
+    text-decoration: none;
+    /* 밑줄 제거 */
+    color: inherit;
+    /* 기본 텍스트 색상 유지 */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav.textmenu a:hover {
+    color: #4c63af;
+    transform: translateY(-3px) scale(1.1);
+    /* 위로 살짝 이동하며 확대 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* 더 깊은 그림자 효과 */
+}
+
+nav.textmenu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #4c63af;
+    /* 하이라이트 색상 */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav.textmenu a:hover::before {
+    width: 100%;
+    /* 전체 너비로 확장 */
+    left: 0;
+    /* 초기 위치로 이동 */
+}
+
+
+/* 마지막 빈 span은 숨김 처리 */
+nav.textmenu span {
+    display: none;
+}
+
+.Project {
+    animation: fadeIn 1.5s ease-in;
+    border-style: solid;
+    border-color: #333; /* 테두리 색을 회색으로 설정 */
+    border-width: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 적당한 그림자 */
+    width: 400px;
+    height: auto; /* 내용에 맞게 높이 자동 조정 */
+    border-radius: 10px;
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 가로 중앙 정렬 */
+    justify-content: center; /* 세로 중앙 정렬 */
+    font-family: 'GmarketSansMedium';
+    background-color: #f1f4ff; /* 배경색을 한 번만 설정 */
+    margin-top: 30px;
+    padding: 20px; /* 안쪽 여백 추가 */
+    margin-left: 40px;
+}
+
+.Project h4 {
+    animation: fadeIn 1.5s ease-in;
+    margin: 10px 0; /* 제목의 위아래 간격 추가 */
+}
+
+.Project a, .Project p {
+    animation: fadeIn 1.5s ease-in;
+    margin: 5px 0; /* 항목들 간격 추가 */
+}
+
+
+h4{
+    animation: fadeIn 1.5s ease-in;
+    color:#2b3b6f;
+}
+
+/* 전체 ul 요소를 가로로 정렬 */
+ul {
+    animation: fadeIn 1.5s ease-in;
+    padding: 0; /* 기본 패딩 제거 */
+    margin: 0; /* 기본 마진 제거 */
+    display: flex; /* Flexbox 사용 */
+    flex-wrap: wrap; /* 항목들이 한 줄을 넘어갈 경우 다음 줄로 넘어가도록 설정 */
+    gap: 20px; /* 항목 간 간격 설정 */
+}
+
+/* li 요소 스타일 */
+li {
+    animation: fadeIn 1.5s ease-in;
+    list-style: none; /* 불릿 제거 */
+    width: 30%; /* 각 항목의 너비 설정 (예: 3개 항목을 한 줄에 배치하려면 30%씩 설정) */
+    margin-bottom: 15px; /* 항목 간 간격 */
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 작은 화면에서도 잘 보이도록 하기 위해 미디어 쿼리 추가 */
+@media (max-width: 768px) {
+    li {
+        width: 45%; /* 화면이 작을 때 항목 너비를 45%로 설정 (2개씩 배치) */
+    }
+}
+
+@media (max-width: 480px) {
+    li {
+        width: 100%; /* 화면이 더 작을 때 항목 너비를 100%로 설정 (1개씩 배치) */
+    }
+}
