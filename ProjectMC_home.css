@@ -133,7 +133,7 @@ nav.textmenu span {
 }
 
 section {
-    height: 500px;
+    height: 572px;
     width: 100%;
     position: relative;
     display: flex;
@@ -198,3 +198,4 @@ a {
     font-style: bold;
     animation: fadeIn 1.5s ease-in;
 }
+
