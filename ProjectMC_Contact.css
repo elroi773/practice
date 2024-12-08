@@ -125,3 +125,113 @@ nav.textmenu a:hover::before {
 nav.textmenu span {
     display: none;
 }
+
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body 스타일 */
+body {
+    font-family: 'GmarketSansMedium';
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* 연락처 섹션 스타일 */
+#contact {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* 폼 스타일 */
+form {
+    font-family: 'GmarketSansMedium';
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 입력 필드 스타일 */
+.form-group {
+    font-family: 'GmarketSansMedium';
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input, textarea {
+    font-family: 'GmarketSansMedium';
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* 버튼 스타일 */
+button {
+    font-family: 'GmarketSansMedium';
+    border-radius: 15px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5C6BC0;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3f4a9a;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    #contact h2 {
+        font-size: 2rem;
+    }
+
+    .form-group {
+        gap: 10px;
+    }
+
+    input, textarea {
+        font-size: 0.95rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
