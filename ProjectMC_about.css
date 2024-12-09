@@ -214,6 +214,7 @@ nav.textmenu span {
     animation: fadeIn 1.5s ease-in;
     font-style: bold;
     color: #2b3b6f;
+    font-size:30px;
 }
 
 .skills_container {
