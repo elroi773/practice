@@ -17,5 +17,32 @@
         <a href="ProjectMC_Contact.html">Contact</a>
         <span></span>
     </nav>
+
+    <section id="contact">
+        <div class="container">
+            <h2>연락처</h2>
+            <p>저에게 메시지를 보내주세요!</p>
+            
+            <form action="submit_contact.php" method="POST">
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" placeholder="이름을 입력해주세요" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" placeholder="이메일을 입력해주세요" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">메시지</label>
+                    <textarea id="message" name="message" placeholder="메시지를 입력해주세요" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">보내기</button>
+            </form>
+        </div>
+    </section>
+
 </body>
 </html>
