@@ -199,3 +199,6 @@ a {
     animation: fadeIn 1.5s ease-in;
 }
 
+p{
+    font-family: 'GmarketSansMedium';  
+}
