@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,42 +8,61 @@
     <link rel="stylesheet" href="ProjectMC_Contact.css">
 
 </head>
+
 <body>
+    <!-- 페이지 헤더 -->
     <h1>Yire's Portfolio</h1>
+
+    <!-- 네비게이션 메뉴 -->
     <nav class="textmenu">
-        <a href="ProjectMC_home.html">Home</a>
-        <a href="ProjectMC_about.html">About</a>
-        <a href="ProjectMC_profile.html">Profile</a>
-        <a href="ProjectMC_project.html">Project</a>
-        <a href="ProjectMC_Contact.html">Contact</a>
-        <span></span>
+        <a href="ProjectMC_home.html">Home</a> <!-- 홈 페이지로 이동 -->
+        <a href="ProjectMC_about.html">About</a> <!-- 소개 페이지로 이동 -->
+        <a href="ProjectMC_profile.html">Profile</a> <!-- 프로필 페이지로 이동 -->
+        <a href="ProjectMC_project.html">Project</a> <!-- 프로젝트 페이지로 이동 -->
+        <a href="ProjectMC_Contact.html">Contact</a> <!-- 연락처 페이지로 이동 -->
+        <span></span> <!-- 시각적 장식을 위한 빈 요소 -->
     </nav>
 
+    <!-- 연락처 섹션 -->
     <section id="contact">
         <div class="container">
-            <h2>연락처</h2>
-            <p>저에게 메시지를 보내주세요!</p>
-            
+            <h2>연락처</h2> <!-- 섹션 제목 -->
+            <p>저에게 메시지를 보내주세요!</p> <!-- 간단한 안내 문구 -->
+
+            <!-- 연락처 입력 폼 -->
             <form action="submit_contact.php" method="POST">
+                <!-- 이름 입력 필드 -->
                 <div class="form-group">
-                    <label for="name">이름</label>
-                    <input type="text" id="name" name="name" placeholder="이름을 입력해주세요" required>
+                    <label for="name">이름</label> <!-- 입력 필드에 대한 라벨 -->
+                    <input type="text" id="name" name="name" placeholder="이름을 입력해주세요" required> <!-- 이름 입력 필드 -->
                 </div>
 
+                <!-- 이메일 입력 필드 -->
                 <div class="form-group">
                     <label for="email">이메일</label>
-                    <input type="email" id="email" name="email" placeholder="이메일을 입력해주세요" required>
+                    <input type="email" id="email" name="email" placeholder="이메일을 입력해주세요" required> <!-- 이메일 입력 필드 -->
                 </div>
 
+                <!-- 메시지 입력 필드 -->
                 <div class="form-group">
                     <label for="message">메시지</label>
                     <textarea id="message" name="message" placeholder="메시지를 입력해주세요" rows="5" required></textarea>
+                    <!-- 메시지 입력 필드 -->
                 </div>
 
+                <!-- 전송 버튼 -->
                 <button type="submit">보내기</button>
             </form>
         </div>
     </section>
 
+    <!-- 페이지 푸터 -->
+    <footer class="contact-footer">
+        <h3>그 외 연락처</h3><br> <!-- 추가 연락처 제목 -->
+        <p>연락처: 010-4551-7011</p> <!-- 연락처 정보 -->
+        <p>이메일: s2457@e-mirim.hs.kr</p> <!-- 이메일 정보 -->
+        <p>© 2024 Reina elroi773 Thank u</p> <!-- 저작권 및 감사 메시지 -->
+    </footer>
 </body>
+
 </html>
