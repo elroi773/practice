@@ -1,3 +1,4 @@
+/* ChosunGu 폰트를 정의 */
 @font-face {
     font-family: 'ChosunGu';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
@@ -5,6 +6,7 @@
     font-style: normal;
 }
 
+/* GmarketSansMedium 폰트를 정의 */
 @font-face {
     font-family: 'GmarketSansMedium';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
@@ -12,40 +14,46 @@
     font-style: normal;
 }
 
+/* 기본 body 스타일 */
 body {
-    animation: fadeIn 1.5s ease-in;
-    margin: 0px;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f9;
-    color: #333;
+    animation: fadeIn 1.5s ease-in; /* 페이드 인 애니메이션 추가 */
+    margin: 0px; /* 기본 여백 제거 */
+    font-family: Arial, sans-serif; /* 폰트 설정 */
+    line-height: 1.6; /* 줄 간격 설정 */
+    background-color: #f4f4f9; /* 배경색 설정 */
+    color: #333; /* 기본 텍스트 색상 */
 }
 
+/* h1 스타일 */
 h1 {
     animation: fadeIn 1.5s ease-in;
-    font-family: 'GmarketSansMedium';
-    color: #2b3b6f;
-    padding-left: 30px;
-    margin-bottom: 20px;
+    font-family: 'GmarketSansMedium'; /* 폰트 지정 */
+    color: #2b3b6f; /* 텍스트 색상 */
+    padding-left: 30px; /* 왼쪽 여백 */
+    margin-bottom: 20px; /* 아래 여백 */
 }
 
+/* h2 스타일 */
 h2 {
     animation: fadeIn 1.5s ease-in;
     font-family: 'GmarketSansMedium';
 }
 
+/* 리스트 아이템 스타일 */
 li {
     animation: fadeIn 1.5s ease-in;
     font-family: 'GmarketSansMedium';
 }
 
+/* 추가 설명 텍스트 스타일 */
 .textexplain {
     animation: fadeIn 1.5s ease-in;
     font-size: small;
     color: #2b3b6f;
-    text-shadow: 30%;
+    text-shadow: 30%; /* 텍스트 그림자 */
 }
 
+/* 더 작은 설명 텍스트 스타일 */
 .textexplain2 {
     animation: fadeIn 1.5s ease-in;
     font-size: smaller;
@@ -53,65 +61,67 @@ li {
     text-shadow: 30%;
 }
 
-/* 전체 메뉴의 스타일 */
+/* 전체 메뉴 스타일 */
 a.menu {
     animation: fadeIn 1.5s ease-in;
     font-family: 'GmarketSansMedium';
     color: #2b3b6f;
-    display: block;
-    padding: 10px 20px;
-    background-color: #4c63af;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
+    display: block; /* 블록 형식으로 */
+    padding: 10px 20px; /* 안쪽 여백 */
+    background-color: #4c63af; /* 배경색 */
+    color: white; /* 텍스트 색상 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-weight: bold; /* 볼드체 */
+    border-radius: 5px; /* 모서리 둥글게 */
 }
 
+/* 메뉴 hover 스타일 */
 a.menu:hover {
     background-color: #4c63af;
 }
 
-/* 네비게이션 메뉴의 스타일 */
+/* 네비게이션 메뉴 스타일 */
 nav.textmenu {
     font-family: 'GmarketSansMedium';
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* 플렉스박스 사용 */
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center; /* 수직 정렬 */
     padding: 10px;
-    background-color: #ededff;
-    border-radius: 40px;
-    gap: 10px;
-    margin-bottom: 20px;
+    background-color: #ededff; /* 배경색 */
+    border-radius: 40px; /* 모서리 둥글게 */
+    gap: 10px; /* 요소 간 간격 */
+    margin-bottom: 20px; /* 아래 여백 */
 }
 
-/* 링크 스타일 */
+/* 네비게이션 링크 스타일 */
 nav.textmenu a {
     animation: fadeIn 1.5s ease-in;
     padding: 12px 20px;
     color: #333;
     text-decoration: none;
     font-size: 16px;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease; /* 색상 전환 효과 */
     text-align: center;
     border-radius: 4px;
 }
 
-/* hover 효과 */
+/* 네비게이션 링크 hover 효과 */
 nav.textmenu a {
     display: inline-block;
     position: relative;
     text-decoration: none;
     color: inherit;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease; /* 색상 및 크기 전환 */
 }
 
 nav.textmenu a:hover {
-    color: #4c63af;
-    transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    color: #4c63af; /* 텍스트 색상 변경 */
+    transform: translateY(-3px) scale(1.1); /* 위로 이동하며 크기 확대 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
 }
 
+/* 네비게이션 hover 아래 라인 효과 */
 nav.textmenu a::before {
     content: '';
     position: absolute;
@@ -128,24 +138,25 @@ nav.textmenu a:hover::before {
     left: 0;
 }
 
-/* 마지막 빈 span은 숨김 처리 */
+/* 숨김 처리된 마지막 빈 span */
 nav.textmenu span {
     display: none;
 }
 
+/* 기술 섹션 스타일 */
 .skills {
     animation: fadeIn 1.5s ease-in;
     max-width: 800px;
-    margin: 40px auto;
+    margin: 40px auto; /* 가운데 정렬 */
     padding: 20px;
-    background: rgba(255, 255, 255, 0.8); /* 투명도 추가 */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8); /* 반투명 배경 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
     line-height: 1.8;
-    backdrop-filter: blur(10px); /* 블러 효과 추가 */
+    backdrop-filter: blur(10px); /* 블러 효과 */
 }
 
-
+/* 기술 섹션의 제목 스타일 */
 .skills h1 {
     animation: fadeIn 1.5s ease-in;
     text-align: center;
@@ -153,6 +164,7 @@ nav.textmenu span {
     margin-bottom: 20px;
 }
 
+/* 기술 섹션의 부제목 스타일 */
 .skills h2 {
     animation: fadeIn 1.5s ease-in;
     margin-top: 20px;
@@ -161,6 +173,7 @@ nav.textmenu span {
     margin-bottom: 10px;
 }
 
+/* 기술 내용 컨테이너 스타일 */
 .skills_container {
     animation: fadeIn 1.5s ease-in;
     display: flex;
@@ -169,6 +182,7 @@ nav.textmenu span {
     gap: 20px;
 }
 
+/* 각 기술 섹션 스타일 */
 .skills_section {
     animation: fadeIn 1.5s ease-in;
     flex: 1 1 calc(50% - 20px);
@@ -180,11 +194,13 @@ nav.textmenu span {
     text-align: center;
 }
 
+/* 툴 섹션 스타일 */
 .skills .tools {
     animation: fadeIn 1.5s ease-in;
     margin-top: 20px;
 }
 
+/* 툴 섹션 세부 스타일 */
 .skills .tools_section {
     animation: fadeIn 1.5s ease-in;
     flex: 1 1 100%;
@@ -195,6 +211,7 @@ nav.textmenu span {
     text-align: center;
 }
 
+/* 기술 섹션 리스트 스타일 */
 .skills_section ul {
     animation: fadeIn 1.5s ease-in;
     list-style-type: none;
@@ -203,6 +220,7 @@ nav.textmenu span {
     text-align: left;
 }
 
+/* 기술 섹션 리스트 아이템 스타일 */
 .skills_section ul li {
     animation: fadeIn 1.5s ease-in;
     margin: 5px 0;
@@ -210,18 +228,21 @@ nav.textmenu span {
     line-height: 1.6;
 }
 
+/* 강조 텍스트 스타일 */
 .front {
     animation: fadeIn 1.5s ease-in;
     font-style: bold;
     color: #2b3b6f;
-    font-size:30px;
+    font-size: 30px;
 }
 
+/* 기술 컨테이너 정렬 */
 .skills_container {
     animation: fadeIn 1.5s ease-in;
     text-align: center;
 }
 
+/* 기술 부제목 스타일 */
 .skill_h2 {
     animation: fadeIn 1.5s ease-in;
     font-family: 'GmarketSansMedium';
@@ -230,6 +251,7 @@ nav.textmenu span {
     margin-left: 40px;
 }
 
+/* 페이드 인 애니메이션 정의 */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -238,4 +260,6 @@ nav.textmenu span {
         opacity: 1;
     }
 }
-
+.front{
+    font-style: italic;
+}
