@@ -1,0 +1,304 @@
+/* @font-face: 웹 폰트 로드 */
+@font-face {
+    font-family: 'ChosunGu';
+    /* 폰트 이름 */
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    /* 폰트 파일 경로 */
+    font-weight: normal;
+    /* 기본 폰트 굵기 */
+    font-style: normal;
+    /* 기본 폰트 스타일 */
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    /* 폰트 이름 */
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    /* 폰트 파일 경로 */
+    font-weight: normal;
+    /* 기본 폰트 굵기 */
+    font-style: normal;
+    /* 기본 폰트 스타일 */
+}
+
+/* 기본 바디 스타일 */
+body {
+    margin: 0px;
+    /* 기본 마진 제거 */
+    text-align: center;
+    /* 텍스트 가운데 정렬 */
+    animation: fadeIn 1.5s ease-in;
+    /* 페이지 로드시 페이드인 애니메이션 */
+}
+
+/* h1 제목 스타일 */
+h1 {
+    font-family: 'GmarketSansMedium';
+    /* 폰트 설정 */
+    color: #2b3b6f;
+    /* 텍스트 색상 */
+    padding-left: 30px;
+    /* 왼쪽 패딩 */
+    animation: fadeIn 1.5s ease-in;
+    /* 애니메이션 적용 */
+}
+
+/* 작은 설명 텍스트 스타일 */
+.textexplain {
+    font-size: small;
+    /* 글자 크기 */
+    color: #2b3b6f;
+    /* 텍스트 색상 */
+    text-shadow: 30%;
+    /* 텍스트 그림자 */
+    animation: fadeIn 1.5s ease-in;
+    /* 애니메이션 적용 */
+}
+
+/* 더 작은 설명 텍스트 스타일 */
+.textexplain2 {
+    font-size: smaller;
+    /* 글자 크기 */
+    color: #2b3b6f;
+    /* 텍스트 색상 */
+    text-shadow: 30%;
+    /* 텍스트 그림자 */
+    animation: fadeIn 1.5s ease-in;
+    /* 애니메이션 적용 */
+}
+
+/* 메뉴 링크 스타일 */
+a.menu {
+    font-family: 'GmarketSansMedium';
+    /* 폰트 설정 */
+    color: #2b3b6f;
+    /* 텍스트 색상 */
+    display: block;
+    /* 블록 요소로 설정 */
+    padding: 10px 20px;
+    /* 패딩 */
+    background-color: #4c63af;
+    /* 배경색 */
+    color: white;
+    /* 텍스트 색상 */
+    text-align: center;
+    /* 텍스트 가운데 정렬 */
+    text-decoration: none;
+    /* 밑줄 제거 */
+    font-weight: bold;
+    /* 글자 두께 */
+    border-radius: 5px;
+    /* 둥근 테두리 */
+    animation: fadeIn 1.5s ease-in;
+    /* 애니메이션 적용 */
+}
+
+/* 메뉴 링크 호버 효과 */
+a.menu:hover {
+    background-color: #4c63af;
+    /* 호버 시 배경색 변경 */
+}
+
+/* 네비게이션 메뉴 스타일 */
+nav.textmenu {
+    font-family: 'GmarketSansMedium';
+    /* 폰트 설정 */
+    display: flex;
+    /* 플렉스박스를 사용 */
+    justify-content: center;
+    /* 가로로 가운데 정렬 */
+    align-items: center;
+    /* 세로 중앙 정렬 */
+    padding: 10px;
+    /* 패딩 */
+    background-color: #ededff;
+    /* 배경색 */
+    border-radius: 5px;
+    /* 둥근 테두리 */
+    gap: 10px;
+    /* 항목 간의 간격 */
+    border-radius: 40px;
+    /* 더 둥근 테두리 */
+    animation: fadeIn 1.5s ease-in;
+    /* 애니메이션 적용 */
+}
+
+/* 네비게이션 링크 스타일 */
+nav.textmenu a {
+    padding: 12px 20px;
+    /* 패딩 */
+    color: #333;
+    /* 텍스트 색상 */
+    text-decoration: none;
+    /* 밑줄 제거 */
+    font-size: 16px;
+    /* 글자 크기 */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    /* 색상 및 배경색 변환 효과 */
+    text-align: center;
+    /* 텍스트 가운데 정렬 */
+    border-radius: 4px;
+    /* 둥근 테두리 */
+    animation: fadeIn 1.5s ease-in;
+    /* 애니메이션 적용 */
+}
+
+/* 네비게이션 링크 호버 효과 */
+nav.textmenu a {
+    display: inline-block;
+    /* 인라인 블록 요소로 설정 */
+    position: relative;
+    /* 위치 조정 */
+    text-decoration: none;
+    /* 밑줄 제거 */
+    color: inherit;
+    /* 색상 상속 */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* 확대 및 색상 변환 효과 */
+}
+
+nav.textmenu a:hover {
+    color: #4c63af;
+    /* 호버 시 색상 변경 */
+    transform: translateY(-3px) scale(1.1);
+    /* 위로 이동하고 확대 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* 그림자 효과 */
+}
+
+/* 네비게이션 링크의 하이라이트 효과 */
+nav.textmenu a::before {
+    content: '';
+    /* 비어있는 콘텐츠 */
+    position: absolute;
+    /* 절대 위치 */
+    bottom: 0;
+    /* 아래쪽 정렬 */
+    left: 50%;
+    /* 가운데 정렬 */
+    width: 0;
+    /* 초기 너비 */
+    height: 3px;
+    /* 높이 */
+    background-color: #4c63af;
+    /* 색상 */
+    transition: width 0.3s ease, left 0.3s ease;
+    /* 너비와 위치 변환 효과 */
+}
+
+/* 링크 호버 시 하이라이트 확장 */
+nav.textmenu a:hover::before {
+    width: 100%;
+    /* 너비 확장 */
+    left: 0;
+    /* 위치 변경 */
+}
+
+/* 마지막 빈 span은 숨김 처리 */
+nav.textmenu span {
+    display: none;
+}
+
+/* 섹션 스타일 */
+section {
+    height: 572px;
+    /* 높이 */
+    width: 100%;
+    /* 너비 */
+    position: relative;
+    /* 상대 위치 */
+    display: flex;
+    /* 플렉스박스 사용 */
+    align-items: center;
+    /* 세로 중앙 정렬 */
+    justify-content: center;
+    /* 가로 중앙 정렬 */
+    gap: 20px;
+    /* 항목 간 간격 */
+    flex-wrap: wrap;
+    /* 래핑 */
+    background: linear-gradient(45deg, #f3ec78, #5367a8);
+    /* 그라디언트 배경 */
+    padding: 20px;
+    /* 패딩 */
+    border-radius: 10px;
+    /* 둥근 테두리 */
+    animation: fadeIn 1.5s ease-in;
+    /* 애니메이션 적용 */
+}
+
+/* h2 제목 스타일 */
+h2 {
+    font-size: 100px;
+    /* 글자 크기 */
+    font-family: 'GmarketSansMedium';
+    /* 폰트 설정 */
+    color: #3e4a72;
+    /* 텍스트 색상 */
+    text-shadow: 0px 0px 10px #e4dede;
+    /* 텍스트 그림자 */
+    animation: pulseGlow 3s infinite, fadeIn 1.5s ease-in;
+    /* 애니메이션 적용 */
+}
+
+/* 텍스트 발광 효과 애니메이션 */
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        text-shadow: 0px 0px 10px #e4dede;
+        color: #3e4a72;
+    }
+
+    25% {
+        transform: scale(1.1);
+        text-shadow: 0px 0px 20px #f3ec78;
+        color: #f3ec78;
+    }
+
+    50% {
+        transform: scale(1);
+        text-shadow: 0px 0px 10px #5367a8;
+        color: #5367a8;
+    }
+
+    75% {
+        transform: scale(0.9);
+        text-shadow: 0px 0px 15px #e4dede;
+        color: #3e4a72;
+    }
+
+    100% {
+        transform: scale(1);
+        text-shadow: 0px 0px 10px #e4dede;
+        color: #3e4a72;
+    }
+}
+
+/* 페이드 인 애니메이션 정의 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* 링크 스타일 */
+a {
+    font-family: 'GmarketSansMedium';
+    /* 폰트 설정 */
+    color: #3e4a72;
+    /* 텍스트 색상 */
+    font-style: bold;
+    /* 글자 두께 */
+    animation: fadeIn 1.5s ease-in;
+    /* 애니메이션 적용 */
+}
+
+/* 문단 스타일 */
+p {
+    font-family: 'GmarketSansMedium';
+    /* 폰트 설정 */
+}
