@@ -1,0 +1,519 @@
+/* 폰트 스타일 설정 */
+@font-face {
+    font-family: 'ChosunGu';
+    /* 폰트 이름 */
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    /* 폰트 파일 경로 */
+    font-weight: normal;
+    /* 기본 굵기 */
+    font-style: normal;
+    /* 기본 스타일 */
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    /* 폰트 이름 */
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    /* 폰트 파일 경로 */
+    font-weight: normal;
+    /* 기본 굵기 */
+    font-style: normal;
+    /* 기본 스타일 */
+}
+
+/* 글로벌 스타일 */
+body {
+    margin: 0;
+    /* 기본 여백 제거 */
+}
+
+h1 {
+    font-family: 'GmarketSansMedium';
+    /* 제목 폰트 */
+    color: #2b3b6f;
+    /* 제목 글자 색상 */
+    padding-left: 30px;
+    /* 왼쪽 여백 */
+}
+
+h3 {
+    font-family: 'GmarketSansMedium';
+    /* 제목 폰트 */
+    text-align: center;
+    /* 가운데 정렬 */
+    color: #d6e2ff;
+    /* 제목 글자 색상 */
+}
+
+p {
+    margin-bottom: 50px;
+    /* 아래 여백 */
+    color: #6369ab;
+    /* 본문 글자 색상 */
+    text-align: center;
+    /* 가운데 정렬 */
+}
+
+.title {
+    color: #4a5ba5;
+    /* 제목 글자 색상 */
+    text-align: center;
+    /* 가운데 정렬 */
+    font-size: 24px;
+    /* 글자 크기 */
+    font-weight: bold;
+    /* 글자 굵기 */
+}
+
+.whatcanido {
+    font-size: 22px;
+    /* 글자 크기 */
+    font-weight: bold;
+    /* 글자 굵기 */
+    color: #2b3b6f;
+    /* 글자 색상 */
+    margin: 10px 0;
+    /* 위아래 여백 */
+    text-align: center;
+    /* 가운데 정렬 */
+}
+
+/* 네비게이션 메뉴 스타일 */
+nav.textmenu {
+    font-family: 'GmarketSansMedium';
+    /* 메뉴 폰트 */
+    display: flex;
+    /* 플렉스 박스 */
+    justify-content: center;
+    /* 가운데 정렬 */
+    align-items: center;
+    /* 수직 중앙 정렬 */
+    padding: 10px;
+    /* 내부 여백 */
+    background-color: #ededff;
+    /* 배경 색상 */
+    border-radius: 40px;
+    /* 둥근 모서리 */
+    gap: 10px;
+    /* 메뉴 간격 */
+}
+
+nav.textmenu a {
+    padding: 12px 20px;
+    /* 내부 여백 */
+    color: #333;
+    /* 글자 색상 */
+    text-decoration: none;
+    /* 밑줄 제거 */
+    font-size: 16px;
+    /* 글자 크기 */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    /* 색상 변화 애니메이션 */
+    text-align: center;
+    /* 가운데 정렬 */
+    border-radius: 4px;
+    /* 둥근 모서리 */
+    position: relative;
+    /* 상대 위치 */
+    display: inline-block;
+    /* 인라인 블록 */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* 크기와 색상 변화 애니메이션 */
+}
+
+nav.textmenu a:hover {
+    color: #4c63af;
+    /* 호버 시 글자 색상 */
+    transform: translateY(-3px) scale(1.1);
+    /* 위로 이동하고 크기 확대 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* 그림자 추가 */
+}
+
+nav.textmenu a::before {
+    content: '';
+    /* 가상 요소 추가 */
+    position: absolute;
+    /* 절대 위치 */
+    bottom: 0;
+    /* 아래쪽 위치 */
+    left: 50%;
+    /* 가운데 정렬 */
+    width: 0;
+    /* 초기 너비 */
+    height: 3px;
+    /* 높이 */
+    background-color: #4c63af;
+    /* 배경 색상 */
+    transition: width 0.3s ease, left 0.3s ease;
+    /* 애니메이션 */
+}
+
+nav.textmenu a:hover::before {
+    width: 100%;
+    /* 너비 확장 */
+    left: 0;
+    /* 왼쪽으로 정렬 */
+}
+
+nav.textmenu span {
+    display: none;
+    /* 숨기기 */
+}
+
+.me {
+    margin: 20px auto;
+    /* 중앙 정렬 */
+    width: 450px;
+    /* 너비 */
+    height: auto;
+    /* 높이 자동 */
+    border-radius: 100%;
+    /* 원형 */
+    display: block;
+    /* 블록 요소 */
+    animation: bounceUp 2s ease-in-out forwards, morph1 4s 2s infinite;
+    /* 첫 번째 애니메이션은 즉시 실행되고, 두 번째 애니메이션은 2초 후에 실행됩니다 */
+
+    /* 애니메이션 */
+}
+
+/* 애니메이션 */
+@keyframes bounceUp {
+    0% {
+        transform: translateY(50px);
+        /* 아래에서 시작 */
+        opacity: 0;
+        /* 투명 */
+    }
+
+    60% {
+        transform: translateY(-10px);
+        /* 위로 이동 */
+        opacity: 1;
+        /* 불투명 */
+    }
+
+    80% {
+        transform: translateY(5px);
+        /* 아래로 살짝 이동 */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* 제자리 */
+    }
+}
+
+.animated-img {
+    /* bounceUp 애니메이션 적용 및 부드러운 트랜지션 */
+    animation: bounceUp 1.8s ease-out;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.animated-img:hover {
+    /* 호버 시 이미지 확대 및 약간의 회전 효과 */
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.animate-bounce {
+    /* bounceUp 애니메이션 추가 */
+    animation: bounceUp 1.5s ease-out;
+}
+
+@keyframes gradientShift {
+
+    /* 배경 그라데이션이 이동하는 애니메이션 */
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.title {
+    /* 제목 스타일 - 텍스트 가운데 정렬 및 애니메이션 추가 */
+    text-align: center;
+    font-size: 20px;
+    color: #333;
+    margin-top: 30px;
+    animation: bounceUp 1.5s ease-in-out;
+}
+
+h6 {
+    /* h6 요소 스타일 - 특정 색상과 애니메이션 적용 */
+    color: #2b3b6f;
+    margin-left: 30px;
+    font-size: 30px;
+    font-family: 'GmarketSansMedium';
+    animation: bounceUp 1.5s ease-in-out;
+}
+
+section {
+    /* 섹션 컨테이너 스타일 - 유연한 레이아웃과 그라데이션 배경 */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: linear-gradient(45deg, #f3ec78, #5367a8);
+    padding: 20px;
+    border-radius: 10px;
+    height: 500px;
+}
+
+.textcontainer {
+    /* 텍스트 컨테이너 스타일 - 가운데 정렬 및 애니메이션 */
+    text-align: center;
+    max-width: 400px;
+    margin-right: 150px;
+    animation: bounceUp 1.5s ease-in-out;
+}
+
+h2 {
+    /* h2 요소 스타일 - 텍스트 왼쪽 정렬 및 폰트 스타일 설정 */
+    margin: 0;
+    margin-left: 20px;
+    font-size: 24px;
+    color: #333;
+    font-family: 'GmarketSansMedium';
+}
+
+p {
+    /* p 요소 스타일 - 텍스트 색상과 마진 설정 */
+    color: #555;
+    font-family: 'GmarketSansMedium';
+    margin-left: 20px;
+}
+
+.howtocontact {
+    /* 연락 방법 스타일 - 중앙 정렬 및 간격 추가 */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    animation: bounceUp 1.5s ease-in-out;
+}
+
+h5 {
+    /* h5 요소 스타일 - 특정 폰트 설정 */
+    font-family: 'GmarketSansMedium';
+}
+
+/* 부모 컨테이너 설정 */
+.saywhoiam {
+    /* 요소 정렬과 반응형 레이아웃 설정 */
+    display: flex;
+    justify-content: space-around;
+    /* 요소 사이의 간격 균등 분배 */
+    align-items: flex-start;
+    /* 상단 정렬 */
+    flex-wrap: wrap;
+    /* 반응형: 줄바꿈 허용 */
+    gap: 20px;
+    /* 요소 간의 간격 */
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    /* 배경색 */
+    border: 1px solid #ddd;
+    /* 테두리 */
+    border-radius: 10px;
+    /* 둥근 테두리 */
+}
+
+/* 개별 카드 스타일 */
+.saywhoiam>div {
+    /* 카드 레이아웃과 호버 효과 설정 */
+    flex: 1 1 30%;
+    /* 유연한 크기와 최소 너비 설정 */
+    max-width: 30%;
+    /* 최대 너비 설정 */
+    background-color: #ffffff;
+    /* 카드 배경색 */
+    border: 1px solid #ccc;
+    /* 카드 테두리 */
+    border-radius: 8px;
+    /* 카드 둥근 테두리 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* 그림자 효과 */
+    padding: 15px;
+    box-sizing: border-box;
+    /* 패딩 포함 크기 계산 */
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* 호버 효과 전환 */
+}
+
+/* 카드 호버 효과 */
+.saywhoiam>div:hover {
+    /* 호버 시 카드의 이동 및 그림자 강조 */
+    transform: translateY(-5px);
+    /* 위로 살짝 이동 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* 그림자 강조 */
+}
+
+/* 제목 스타일 */
+.saywhoiam h5 {
+    /* 카드 제목 스타일 */
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* 본문 텍스트 스타일 */
+.saywhoiam p {
+    /* 카드 본문 텍스트 스타일 */
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.my_creer {
+    margin-bottom: 500px;
+}
+
+.img {
+    /* 이미지 스타일 - 원형 및 그림자 추가 */
+    margin-top: 50px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    /* 이미지를 원형으로 */
+    margin-left: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* 부드러운 그림자 추가 */
+    object-fit: cover;
+    /* 이미지를 잘라내지 않고 맞추기 */
+    float: left;
+    animation: morph 4s infinite;
+}
+
+.creer_box {
+    /* 크리어 박스 스타일 - 텍스트 스타일 및 배경 효과 */
+    float: right;
+    margin-right: 300px;
+    font-size: 18px;
+    /* 적절한 크기로 조정 */
+    font-family: 'GmarketSansMedium', sans-serif;
+    margin-top: 40px;
+    width: 530px;
+    border-radius: 15px;
+    padding: 10px;
+    /* 내부 여백 추가 */
+    color: #2c3e50;
+    /* 좀 더 차분한 색상 */
+    background-color: #f9f9f9;
+    /* 부드러운 배경 색상 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* 부드러운 그림자 */
+    line-height: 1.8;
+    /* 가독성을 위한 줄 간격 */
+    text-align: left;
+    max-width: 600px;
+    /* 최대 넓이 설정 */
+    display: flex;
+    /* 크리어 박스 내 요소들을 가로로 배치 */
+    flex-wrap: wrap;
+    /* 내용이 많을 경우 자동으로 줄 바꿈 */
+    gap: 15px;
+    /* 항목 간 간격 설정 */
+}
+
+
+.creer_box ul {
+    /* 리스트 스타일 초기화 */
+    padding: 0;
+    margin: 0;
+}
+
+.creer_box li {
+    list-style: none;
+    font-size: 18px;
+    /* 글자 크기 설정 */
+    margin-right: 10px;
+    /* 항목 간의 간격을 줄임 */
+    color: #34495e;
+    /* 텍스트 색상 */
+    font-weight: 600;
+    /* 텍스트 굵기 */
+    line-height: 1.5;
+    /* 줄 간격 설정 */
+    padding-left: 15px;
+    /* 왼쪽 패딩 */
+    display: inline-flex;
+    /* 가로로 나열되도록 설정 */
+    align-items: center;
+    /* 세로 정렬 */
+}
+
+.creer_box li::marker {
+    color: #5367a8;
+    /* 마커 색상 */
+    font-size: 20px;
+    /* 마커 크기 */
+}
+
+.title {
+    font-size: 14px;
+    /* 제목 글자 크기 */
+    font-weight: 700;
+    /* 제목을 굵게 */
+    color: #2b3b6f;
+    /* 제목 색상 */
+}
+
+
+.creer {
+    /* 크리어 텍스트 스타일 */
+    color: #2b3b6f;
+    font-size: 30px;
+}
+
+
+
+@keyframes morph {
+
+    0%,
+    100% {
+        border-radius: 50%;
+    }
+
+    25% {
+        border-radius: 30% 70% 70% 30% / 30% 70% 30% 70%;
+    }
+
+    50% {
+        border-radius: 70% 30% 30% 70% / 70% 30% 70% 30%;
+    }
+
+    75% {
+        border-radius: 50% 50% 30% 50%;
+    }
+}
+
+
+@keyframes morph1 {
+    0%, 100% {
+        border-radius: 50%;
+    }
+    25% {
+        border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
+    }
+    50% {
+        border-radius: 70% 30% 50% 50% / 50% 70% 30% 50%;
+    }
+    75% {
+        border-radius: 50% 50% 50% 50%;
+    }
+}
