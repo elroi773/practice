@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>집에 가고 싶다..</title>
+    <script>
+        function checkOddEven() {
+            const inputField = document.getElementById("numberInput");
+            const resultField = document.getElementById("result");
+            const number = Number(inputField.value);
+
+            if (isNaN(number)) {
+                resultField.textContent = "입력한 값이 숫자가 아닙니다.";
+            } else {
+                resultField.textContent = number % 2 === 0 ? "짝수입니다." : "홀수입니다.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>홀짝 판별기</h1>
+    <form onsubmit="event.preventDefault(); checkOddEven();">
+        <label for="numberInput">숫자를 입력하세요:</label>
+        <input type="text" id="numberInput" name="numberInput">
+        <button type="submit">확인</button>
+    </form>
+    <p id="result"></p>
+</body>
+</html>
