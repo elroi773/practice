@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function process(){
+            let obj = document.myform.text1;
+            alert(obj.value);
+        }
+    </script>
+    <form name = "myform">
+        <input type = "text" id = "target" name = "text1">
+        <input type = "submit" value="제출" onclick = "process()">
+    </form>
+</body>
+</html>
