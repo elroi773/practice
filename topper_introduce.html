@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동아리 참가 신청</title>
+    <link rel="stylesheet" href="topper_introduce.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>동아리 참가 신청</h1>
+        <form action="/submit" method="post">
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" placeholder="example@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">전화번호</label>
+                <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" required>
+            </div>
+
+            <div class="form-group">
+                <label for="interests">관심 분야</label>
+                <select id="interests" name="interests" required>
+                    <option value="">선택하세요</option>
+                    <option value="programming">프로그래밍</option>
+                    <option value="art">프론트</option>
+                    <option value="music">백</option>
+                    <option value="sports">보안</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">자기소개</label>
+                <textarea id="message" name="message" placeholder="간단한 자기소개를 작성하세요"></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">신청하기</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
