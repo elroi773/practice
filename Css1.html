@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Gradient Text</title>
+</head>
+
+<body>
+    <!-- SVG를 활용한 그라데이션 -->
+    <svg width="600" height="100">
+        <!-- 그라데이션 정의 -->
+        <defs>
+            <linearGradient id="textGradient" gradientTransform="rotate(45)">
+                <stop offset="0%" stop-color="#fd0000" />
+                <stop offset="50%" stop-color="rgb(255, 0, 255)" />
+                <stop offset="100%" stop-color="aqua" />
+            </linearGradient>
+        </defs>
+
+        <!-- 그라데이션이 적용된 텍스트 -->
+        <text x="10" y="50" font-size="40" font-weight="bold" fill="url(#textGradient)">Gradient</text>
+    </svg>
+</body>
+
+</html>
