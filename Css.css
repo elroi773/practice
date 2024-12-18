@@ -1,0 +1,19 @@
+.Laser::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(90deg,transparent,rgb(247,255,5,0.945),transparent);
+    animation:swipe 3s linear infinite;
+}
+
+@keyframes swipe {
+    0%{
+        left: -100%;
+    }
+    100%{
+        left:100%;
+    }
+}
