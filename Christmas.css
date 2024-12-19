@@ -1,0 +1,153 @@
+@font-face {
+    font-family: 'MaruBuri';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'MaruBuriSemiBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'MaruBuriBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'MaruBuriLight';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Light.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'MaruBuriExtraLight';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-ExtraLight.ttf) format("truetype");
+}
+/* 공통 스타일 */
+* {
+    margin: 0;
+}
+
+body {
+    height: 600vh;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'MaruBuri';
+    text-align: center;
+    width: 100%;
+    height: 1350px;
+    background-image: url(images/Group\ 1.png);
+}
+
+
+.h {
+    padding-top: 350px;
+    color: aliceblue;
+    opacity: 0;
+    transform: scale(0.8); /* 살짝 작게 시작 */
+    animation: advancedFadeIn 3s ease-in-out forwards;
+}
+
+.hidden {
+    opacity: 0; /* 기본적으로 숨김 */
+    transform: scale(0.8) translateY(30px);
+    filter: blur(10px);
+}
+
+.visible {
+    opacity: 1; /* 보임 */
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+}
+
+
+/* Advanced fade-in 애니메이션 정의 */
+@keyframes advancedFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px); /* 작고 아래에서 시작 */
+        filter: blur(10px); /* 흐릿한 시작 */
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05) translateY(0); /* 살짝 커졌다가 */
+        filter: blur(2px); /* 점점 선명해짐 */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0); /* 제자리 */
+        filter: blur(0); /* 완전히 선명 */
+    }
+}
+
+/* 추가 효과: 반짝이는 텍스트 */
+.h h1, .h h2{
+    background: linear-gradient(90deg, #ffbb00, #ffffff, #ffbb00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s infinite; /* 무한 반복 */
+}
+.bold-bible{
+    background: linear-gradient(90deg, #ffe292, #3c4695, #1c1b48);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s infinite; /* 무한 반복 */
+}
+/* Shimmer 애니메이션 정의 */
+@keyframes shimmer {
+    0% {
+        background-position: -100%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+
+#h1{
+    padding-top: 500px;
+}
+.jesus_birth{
+    background-color: #fffbf1;
+}
+.bible{
+    display: flex;
+    font-family: 'MaruBuri';
+    height: 450px;
+    padding-top: 450px;
+    padding-left: 40px;
+    color: #4b4127;
+    animation: advancedFadeIn 3s ease-in-out forwards;
+}
+
+.bold-bible{
+    font-family: 'MaruBuriBold';
+    font-size: 30px;
+
+}
+
+.light-bible{
+    font-family: 'MaruBuriLight';
+    font-size: 20px;
+}
+
+.heisthelight{
+    background-image: url(images/light.png);
+    width: 100%;
+    height: 1300px;
+    display: flex;
+}
+
+.light{
+    font-family: 'MaruBuri'
+    color: aliceblue;
+    opacity: 0;
+    transform: scale(0.8); /* 살짝 작게 시작 */
+    animation: advancedFadeIn 3s ease-in-out forwards;
+}
