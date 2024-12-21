@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Verification Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("UygOBJObCFbHWOLzb"); 
+        })();
+        function sendVerificationCode() {
+            const emailInput = document.getElementById("userEmail").value;
+
+            // 6자리 인증번호 생성
+            const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
+
+            // EmailJS를 통해 인증번호 전송
+            emailjs.send("service_g6iu7xz", "template_003kqyx", {
+                user_email: emailInput,
+                verification_code: verificationCode
+            })
+            .then((response) => {
+                alert("인증번호가 전송되었습니다. 이메일을 확인하세요.");
+                console.log("Success!", response.status, response.text);
+            })
+            .catch((error) => {
+                alert("인증번호 전송에 실패했습니다.");
+                console.error("Failed...", error);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div style="max-width: 300px; margin: 0 auto; text-align: center;">
+        <h2>이메일 인증 테스트</h2>
+        <input type="email" id="userEmail" placeholder="이메일을 입력하세요" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
+        <button onclick="sendVerificationCode()" style="width: 100%; padding: 10px; background-color: #4CAF50; color: white; border: none;">인증번호 전송</button>
+    </div>
+</body>
+</html>
