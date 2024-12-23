@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="대신전해드립니다회원가입수정.css">
+</head>
+<body>
+    <div class="signup-container">
+        <h1 class="signup-title">회원가입</h1>
+        <form id="signupForm" class="signup-form">
+            <button class="signup-button" onclick="goToEmailVerification()">이메일 인증하러 가기</button>
+            <input type="text" id="username" placeholder="아이디" class="signup-input" required>
+            <input type="password" id="password" placeholder="비밀번호" class="signup-input" required>
+            <input type="password" id="confirmPassword" placeholder="비밀번호 확인" class="signup-input" required>
+            <input type="text" id="userSchool" placeholder="학교" class="signup-input" required>
+
+            <!-- 가입하기 버튼 -->
+            <button type="button" onclick="submitSignup()" class="signup-button">가입하기</button>
+            <p id="errorMessage" class="error-message" style="display: none;">모든 필드를 채워주세요</p>
+        </form>
+    </div>
+    <script src = "대신전해드립니다회원가입수정.js"></script>
+</body>
