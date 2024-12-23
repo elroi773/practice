@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티 게시판</title>
+    <style>
+        @font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+body {
+    font-family: 'GmarketSansMedium';
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.post-form {
+    margin-bottom: 40px;
+}
+
+.post-form input, .post-form textarea {
+    font-family: 'GmarketSansMedium';
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.post-form button {
+    font-family: 'GmarketSansMedium';
+    padding: 10px 20px;
+    background-color: #4cae4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-form button:hover {
+    background-color: #45a048;
+}
+
+.posts {
+    margin-top: 20px;
+}
+
+.post {
+    
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+.post h3 {
+    font-family: 'GmarketSansMedium';
+    margin: 0;
+    color: #4cae4f;
+}
+
+.post p {
+    font-family: 'GmarketSansMedium';
+    margin: 10px 0;
+    color: #666;
+}
+
+.post .author {
+    font-size: 0.9em;
+    color: #999;
+}
+
+/* 익명/노익명 버튼 스타일 */
+.anonymous-toggle {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.anonymous-toggle button {
+    font-family: 'GmarketSansMedium';
+    padding: 10px 20px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.anonymous-toggle button.active {
+    background-color: #4cae4f;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="post-form">
+            <h2>새 게시물 작성하기</h2>
+            <input type="text" id="post-title" placeholder="제목을 입력하세요" required>
+            <textarea id="post-content" rows="5" placeholder="내용을 입력하세요" required></textarea>
+            <button onclick="submitPost()">게시하기</button>
+        </div>
+        
+        <div class="anonymous-toggle">
+            <button id="anonymous-btn" onclick="toggleAnonymous(true)">익명</button>
+            <button id="no-anonymous-btn" class="active" onclick="toggleAnonymous(false)">노익명</button>
+        </div>
+
+         <div id="user-info">
+            로그인된 사용자: <span id="logged-in-user">홍길동</span>
+        </div>
+    </div>
+    <script>
+        let loggedInUser = '홍길동';
+document.getElementById('logged-in-user').innerText = loggedInUser;
+
+// 익명 여부를 저장하는 변수
+let isAnonymous = false;
+
+// 익명/노익명 버튼 활성화 상태 전환 및 사용자 이름 변경
+function toggleAnonymous(anonymous) {
+    isAnonymous = anonymous;
+    if (anonymous) {
+        document.getElementById('anonymous-btn').classList.add('active');
+        document.getElementById('no-anonymous-btn').classList.remove('active');
+        document.getElementById('logged-in-user').innerText = '익명';  // 익명일 때 이름을 '익명'으로 설정
+    } else {
+        document.getElementById('anonymous-btn').classList.remove('active');
+        document.getElementById('no-anonymous-btn').classList.add('active');
+        document.getElementById('logged-in-user').innerText = loggedInUser;  // 노익명일 때 원래 사용자 이름으로 설정
+    }
+}
+
+// 게시물 제출 함수
+function submitPost() {
+    const title = document.getElementById('post-title').value;
+    const content = document.getElementById('post-content').value;
+
+    if (title.trim() === '' || content.trim() === '') {
+        alert("제목과 내용을 입력해주세요.");
+        return;
+    }
+
+    // 작성자 이름 설정 (익명 여부에 따라 다르게 표시)
+    const authorName = isAnonymous ? '익명' : loggedInUser;
+
+    // 데이터를 새로운 페이지로 전송
+    window.location.href = `대신전해드립니다게시판게시화면.html?title=${encodeURIComponent(title)}&content=${encodeURIComponent(content)}&author=${encodeURIComponent(authorName)}`;
+}
+    </script>
+</body>
+</html>
