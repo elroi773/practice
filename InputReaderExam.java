@@ -16,3 +16,4 @@ public class InputReaderExam {
 		System.out.println();
 	}
 }
+
