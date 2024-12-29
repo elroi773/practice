@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D-Day Countdown</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #fffdd0;
+            color: white;
+            text-align: center;
+        }
+        .countdown-container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .countdown {
+            font-size: 2.5em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown-container">
+        <h1>수능까지 남은 D-Day</h1>
+        <div id="countdown" class="countdown">계산 중...</div>
+    </div>
+
+    <script>
+        // 수능 날짜 설정 (예: 2024년 11월 14일)
+        const examDate = new Date('2024-11-14T00:00:00');
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeDifference = examDate - now;
+
+            if (timeDifference <= 0) {
+                document.getElementById('countdown').innerText = 'D-Day';
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const days = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+            document.getElementById('countdown').innerText = `D-${days}`;
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
