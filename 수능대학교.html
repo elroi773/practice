@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사진이 포함된 뒤집을 수 있는 카드</title>
+    <style>
+        @font-face {
+            font-family: 'Gyeonggi_Batang_Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Batang_Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'SF_HambakSnow';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'YESMyoungjo-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/YESMyoungjo-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #153718;
+            font-family: Arial, sans-serif;
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            padding: 10px;
+        }
+        .card-container {
+            perspective: 1000px;
+        }
+        .card {
+            width: 150px;
+            height: 225px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+        .card.is-flipped {
+            transform: rotateY(180deg);
+        }
+        .card .card-front,
+        .card .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9em;
+            border-radius: 8px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .card .card-front {
+            background-color: white;
+            background-size: cover;
+            background-position: center;
+            color: transparent;
+        }
+        .card .card-back {
+            background-color: #333;
+            transform: rotateY(180deg);
+        }
+        #g {
+            text-align: center;
+            width: 100px;
+            height: 120px;
+        }
+        #go {
+            font-family: 'SF_HambakSnow';
+            font-size: 10px;
+            background-color: rgb(100, 19, 19);
+            text-align: center;
+        }
+        #s {
+            width: 125px;
+            height: 125px;
+        }
+        #se {
+            font-family: 'Gyeonggi_Batang_Regular';
+            text-align: center;
+            font-size: 9px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            background-color: #1b2a8a;
+        }
+        #y {
+            width: 125px;
+            height: 125px;
+        }
+        #yo {
+            background-color: #2645a2;
+            font-family: 'YESMyoungjo-Regular';
+            font-size: 9px;
+            text-align: center;
+        }
+        /* 반응형 스타일 */
+        @media (max-width: 600px) {
+            body {
+                height: auto;
+                padding: 20px 0;
+            }
+            .card {
+                width: 130px;
+                height: 195px;
+            }
+            .card .card-front img {
+                width: 90%;
+                height: auto;
+            }
+            .card .card-back {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cards-container">
+        <div class="card-container" onclick="flipCard(this)" id="yeon">
+            <div class="card">
+                <div class="card-front">
+                    <img src="images/y.png" id="y">
+                </div>
+                <div class="card-back" id="yo">진리가 너희를 자유케 하리라</div>
+            </div>
+        </div>
+        <div class="card-container" onclick="flipCard(this)" id="seoul">
+            <div class="card">
+                <div class="card-front">
+                    <img src="/images/seoulunivers.png" alt="서울대" id="s">
+                </div>
+                <div class="card-back" id="se">누군가 조국의 미래를 묻거든<br>고개를 들어 관악을 보게 하라</div>
+            </div>
+        </div>
+        <div class="card-container" onclick="flipCard(this)" id="goo">
+            <div class="card">
+                <div class="card-front">
+                    <img src="images/gouiversity.jpg" id="g">
+                </div>
+                <div class="card-back" id="go">너의 젊음을 고대에게 걸어라<br>고대는 너에게 세계를 걸겠다</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function flipCard(cardContainer) {
+            const card = cardContainer.querySelector('.card');
+            card.classList.toggle('is-flipped');
+        }
+    </script>
+</body>
+</html>
