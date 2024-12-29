@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할인 메뉴</title>
+    <style>
+        
+        /* 기본 스타일 초기화 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 전체 메뉴 컨테이너 스타일 */
+.sale_menu {
+    max-width: 100%; /* 화면 크기에 맞게 너비를 100%로 설정 */
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* 각 카테고리 스타일 */
+.category {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #fff;
+    padding: 5px; /* 여백 줄이기 */
+}
+
+/* 카테고리 hover 상태 */
+.category:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 토글 버튼 스타일 */
+.toggle_button {
+    background-color: #4cae4f;
+    color: #fff;
+    padding: 8px; /* 패딩을 줄임 */
+    font-size: 0.9em; /* 폰트 크기 줄이기 */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 토글 버튼 hover 상태 */
+.toggle_button:hover {
+    background-color: #43a144;
+    color: #e0e8df;
+}
+
+/* 아이콘 스타일 */
+.icon {
+    transition: transform 0.3s, color 0.3s;
+    margin-left: 10px; /* 아이콘과 텍스트 간격 조정 */
+}
+
+/* 콘텐츠 스타일 */
+.content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-20px);
+    transition: max-height 0.6s ease-out, opacity 0.6s ease-out, transform 0.6s ease-out;
+    background-color: #eaf5ea;
+    padding: 5px 10px; /* 패딩 줄이기 */
+}
+
+/* 활성화된 카테고리 스타일 */
+.category.active .content {
+    max-height: 1000px;
+    opacity: 1;
+    transform: translateY(0);
+    padding: 10px;
+}
+
+/* 아이콘 회전 */
+.category.active .icon {
+    transform: rotate(90deg);
+    color: #c8e6c9;
+}
+
+/* 제목 스타일 */
+h6 {
+    color: #333;
+    font-size: 0.9em; /* 폰트 크기 줄이기 */
+    margin: 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 링크 스타일 */
+a {
+    color: #555;
+    font-size: 0.8em; /* 폰트 크기 줄이기 */
+    line-height: 1.4;
+    display: block;
+    padding: 3px 0; /* 여백 줄이기 */
+    text-decoration: none;
+}
+
+/* 링크 hover 상태 */
+a:hover {
+    text-decoration: underline;
+}
+
+/* 모바일 대응 스타일 */
+@media (max-width: 768px) {
+    /* 모바일 화면에서 각 항목이 두 줄로 표시되도록 변경 */
+    .content a {
+        display: block;
+        font-size: 0.8em;
+    }
+
+    .sale_menu {
+        margin: 10px 5px; /* 좌우 여백을 줄여 화면에 맞추기 */
+    }
+
+    .toggle_button {
+        font-size: 0.8em; /* 버튼 크기 줄이기 */
+        padding: 8px 5px; /* 버튼 여백 줄이기 */
+    }
+
+    .category {
+        padding: 5px; /* 카테고리 padding 줄이기 */
+    }
+
+    /* 텍스트 크기 최적화 */
+    h6 {
+        font-size: 0.85em;
+    }
+
+    /* 내용의 패딩을 줄여서 화면에 맞게 조정 */
+    .content {
+        padding: 5px 5px;
+    }
+
+    /* 링크 크기를 더 작게 줄이기 */
+    a {
+        font-size: 0.75em;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="sale_menu">
+        <!-- Land Category -->
+        <div class="category land_category">
+            <button class="toggle_button">
+                Land
+                <span class="icon">▶</span>
+            </button>
+            <div class="content">
+                <div class="rottae_world">
+                    <h6>롯데월드</h6>
+                    <a>when : 11/14 ~ 11/30<br>
+                        롯데월드 어드벤처, 아쿠아리움, 서울 스카이 최대 52% 할인<br>
+                        롯데월드 어드벤처 부산, 김해 롯데워크파크 최대 57% 할인
+                    </a>
+                </div>
+                <div class="seoul_world">
+                    <h6>서울월드</h6>
+                    <a>when : 11/14 ~ 12/31<br>
+                        2025년 수능 응시자 본인 + 동반 2인 모두 31,500원 할인<br>
+                        이름에 수/험/생 중에 한 글자라도 포함된 고객: 31,500원 할인
+                    </a>
+                </div>
+                <div class="ever_world">
+                    <h6>에버랜드</h6>
+                    <a>아직 공식 발표 전<br>
+                        지난해 혜택 : 수험생에게 최대 약 60%의 특별 가격 우대 혜택
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Airplane Category -->
+        <div class="category airplane_category">
+            <button class="toggle_button">
+                Airplane
+                <span class="icon">▶</span>
+            </button>
+            <div class="content">
+                <div class="tway">
+                    <h6>티웨이 항공</h6>
+                    <a>when : 2025 1월 31일<br>
+                        탑승기간: 2025년 2월 21일 (성탄절 연말 및 연초 설연휴 기간 제외)<br>
+                        국내선 25%, 국제선 최대 10% 할인 가능
+                    </a>
+                    <a>할인 대상: 2025년 대학 수학능력 시험 수험생 본인</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Movie Category -->
+        <div class="category movie_category">
+            <button class="toggle_button">
+                Movie
+                <span class="icon">▶</span>
+            </button>
+            <div class="content">
+                <div class="cgv">
+                    <h6>CGV</h6>
+                    <a>when : 11/14 ~ 11/30<br>
+                        수능 수험생 모든 영화 7,000원 관람 가능<br>
+                        수험생/청소년 대상 콤보 50% 할인 쿠폰 제공
+                    </a>
+                </div>
+                <div class="lotte">
+                    <h6>롯데시네마</h6>
+                    <a>when : 11/14 ~ 11/26<br>
+                        수험생/청소년 관람료 7,000원 할인 프로모션<br>
+                        굿즈 콤보 6,000원 할인 쿠폰 제공
+                    </a>
+                </div>
+                <div class="mega_world">
+                    <h6>메가박스</h6>
+                    <a>when : 11/14 ~ 11/26<br>
+                        수험생/청소년 관람료 7,000원 할인 프로모션<br>
+                        영화 쿠폰 사용 고객 선착순 5,000명 오리지널 팝콘 R, 콤보 3,000원 할인 쿠폰
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hotel Category -->
+        <div class="category hotel_category">
+            <button class="toggle_button">
+                Hotel
+                <span class="icon">▶</span>
+            </button>
+            <div class="content">
+                <div class="glad_hotel">
+                    <h6>글래드 호텔</h6>
+                    <a>글래드 여의도 레스토랑 '그리츠' 점심/저녁 수험생 본인 20% 할인</a>
+                </div>
+                <div class="sonointernational">
+                    <h6>소노 인터내셔널</h6>
+                    <a>when : 11/14 ~ 11/30<br>
+                        소노캄 고양 "셰프스키친" 수험생 본인 점심/저녁 뷔페 50% 할인
+                    </a>
+                </div>
+                <div class="sinhwa_world">
+                    <h6>신화월드</h6>
+                    <a>수험생 대상, 신화 워터파크와 신화 테마파크를 하루 동안<br>
+                        무제한으로 즐길 수 있는 멀티티켓을 정상가 대비 65% 할인
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 모든 토글 버튼에 클릭 이벤트 리스너 추가
+        document.querySelectorAll('.toggle_button').forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.parentElement;
+                category.classList.toggle('active');
+
+                // 아이콘 변경 (화살표 회전)
+                const icon = button.querySelector('.icon');
+                if (category.classList.contains('active')) {
+                    icon.style.transform = 'rotate(90deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
