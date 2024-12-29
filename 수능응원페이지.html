@@ -7,10 +7,285 @@
     <link rel="stylesheet" href="수능응원페이지.css">
 </head>
 <body>
-    <h1>당신의 첫 도전을 응원합니다.</h1>
-    <div id="countdown" class="animated-text"></div>
-    <a>뭘해야 당신들이 힘이 날까</a>
-    <script src="수능응원페이지.js"></script>
+    <!--더 추가사항
+    1. 체크리스트 필수품 
+    2. 수험날 잘 먹는 도시락 
+    3. 대학교 리스트 
+    4. 명언들 // 성경말씀 //그 외 명언// 할 수 있어 !! 
+    5. 수능 응원 노래 
+    6. 운세 뽑기 
+    // 핸드폰 크기로 만들기  -->
+     <div class="check_container">
+        <!-- 이름이 들어갈 부분 -->
+        <br>
+        <h1 id="greeting">당신의 첫 도전을 응원합니다.</h1>
+        <div id="countdown" class="countdown"></div>
+        <button class="button">Play Music</button>
+        <audio id="audio-player" class="audio-player" preload="none">
+            <source src="audio/goodluck!.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    
+        <p class = "message">
+            행운을 빌어줘 - 원필 中<br><br>
+            앞으로 총 몇 번의 몇 번의 행운과<br>
+            그리고 또 몇 번의 몇 번의 절망과<br>
+            차가운 웃음 혹은 기쁨의 눈물을<br>
+            맛보게 될지는 모르겠지만<br><br>
+            아무쪼록 행운을 빌어 줘<br>
+            내 앞길에 행복을 빌어 줘<br>
+            계절이 흘러 되돌아오면<br>
+            더 나은 내가 되어 있을 테니<br>
+            <br>
+            기대해 줘<br>
 
+
+        </p>
+    <div class="check_container">
+        <div>
+
+            
+            <div class = "check">
+                <h2>수능 체크리스트</h2>
+    
+                <div id="checklist">
+                    <ul>
+                        <li><input type="checkbox" id="idCard"> <label for="idCard">신분증</label></li>
+                        <li><input type="checkbox" id="examTicket"> <label for="examTicket">수험표</label></li>
+                        <li><input type="checkbox" id="stationery"> <label for="stationery">검정색 볼펜 <br>및 샤프</label></li>
+                        <li><input type="checkbox" id="watch"> <label for="watch">아날로그시계</label></li>
+                        <li><input type="checkbox" id="snacks"> <label for="snacks">간단한 간식 및 음료</label></li>
+                        <li><input type="checkbox" id="mask"> <label for="mask">마스크 및 손 소독제</label></li>
+                        <li><input type="checkbox" id="medicine"> <label for="medicine">약 (필요한 경우)</label></li>
+                        <li><input type="checkbox" id="money"> <label for="money">비상용 현금</label></li> 
+                    </ul>
+                    <button onclick="checkProgress()" class = "checkbutton">준비 상황 확인</button>
+                    <p id="progressMessage"></p>
+                </div>
+            </div>
+            
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class = "message">
+            <p>
+                잘 해왔고 잘하고 있어 <br>
+                그리고 앞으로도 잘 해낼거야<br>
+                다른 누구도 아니라 너라서. <br><br>
+                그러니까 나는 너를 믿어.<br><br>
+                당신의 마음을 안아줄게요 - 김지훈 中
+            </p>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="cards-container">
+            
+            <div class="card-container" onclick="flipCard(this)" id="yeon">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="imagess/y.png" id="y">
+                    </div>
+                    <div class="card-back" id="yo">진리가 너희를 자유케 하리라</div>
+                </div>
+            </div>
+            <div class="card-container" onclick="flipCard(this)" id="seoul">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="imagess/seoulunivers.png" alt="서울대" id="s">
+                    </div>
+                    <div class="card-back" id="se">누군가 조국의 미래를 묻거든<br>고개를 들어 관악을 보게 하라</div>
+                </div>
+            </div>
+            <div class="card-container" onclick="flipCard(this)" id="goo">
+                <div class="card">
+                    <div class="card-front">
+                        <img src="imagess/gouiversity.jpg" id="g">
+                    </div>
+                    <div class="card-back" id="go">너의 젊음을 고대에게 걸어라<br>고대는 너에게 세계를 걸겠다</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class = "picture">
+        <img src = "imagess/wecando.jpg">
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <h1 class = "wise_saying">랜덤 글귀</h1>
+        <p id="quote" class = "pwise">랜덤 글귀로 내일 운세를 점 쳐보세요!</p>
+        <p id="author" class="author" class = "pwise"></p>
+        <button onclick="generateQuote()" class = "checkbutton">새 글귀 보기</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h4 id="title1">수험날 먹기 좋은 음식들</h4>
+    <div class="menu-container">
+        
+        <div class="menu-section">
+            <h4>식사</h4>
+            <ul>
+                <li>소불고기</li>
+                <li>참치김밥</li>
+                <li>유부초밥</li>
+                <li>닭죽</li>
+                <li>전복죽</li>
+            </ul>
+        </div>
+
+        <div class="menu-section">
+            <h4>반찬</h4>
+            <ul>
+                <li>계란말이</li>
+                <li>장조림</li>
+                <li>멸치볶음</li>
+                <li>두부조림</li>
+                <li>잡채</li>
+                <li>김치</li>
+            </ul>
+        </div>
+
+        <div class="menu-section">
+            <h4>국</h4>
+            <ul>
+                <li>소고기뭇국</li>
+                <li>맑은 황태국</li>
+                <li>갈비탕</li>
+                <li>된장국</li>
+            </ul>
+        </div>
+
+        <div class="menu-section">
+            <h4>과일</h4>
+            <ul>
+                <li>귤</li>
+                <li>오렌지</li>
+                <li>초콜릿</li>
+                <li>사탕</li>
+            </ul>
+        </div>
+    </div>
+    <h4 id = "sale">수험표 할인 품목</h4>
+
+    <div class="sale_menu">
+        <div class="category land_category">
+            <button class="toggle_button">놀이공원</button>
+            <div class="content">
+                <div class="rottae_world">
+                    <h6>롯데월드</h6>
+                    <a>when : 11/14 ~ 11/30<br>
+                        롯데월드 어드벤처, 아쿠아리움, 서울 스카이 최대 52% 할인<br>
+                        롯데월드 어드벤처 부산, 김해 롯데워크파크 최대 57% 할인
+                    </a>
+                </div>
+                <div class="seoul_world">
+                    <h6>서울월드</h6>
+                    <a>when : 11/14 ~ 12/31<br>
+                        2025년 수능 응시자 본인 + 동반 2인 모두 31,500원 할인<br>
+                        이름에 수/험/생 중에 한글자라도 포함된 고객 : 31500원 할인
+                    </a>
+                </div>
+                <div class="ever_world">
+                    <h6>에버랜드</h6>
+                    <a>아직 공식 발표 전<br>
+                        지난해 혜택 : 수험생에게 최대 약 60% 의 특별 가격 우대 혜택
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category airplane_category">
+            <button class="toggle_button">항공권</button>
+            <div class="content">
+                <div class="tway">
+                    <h6>티웨이 항공</h6>
+                    <a>when : 2025 1월 31일<br>
+                        탑승기간: 2025년 2월 21일 (성탄절 연말 및 연초 설연휴 기간 제외)<br>
+                        국내선 25%, 국제선 최대 10% 할인 가능
+                    </a>
+                    <a>할인 대상: 2025년 대학 수학능력 시험 수험생 본인</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category movie_category">
+            <button class="toggle_button">영화</button>
+            <div class="content">
+                <div class="cgv">
+                    <h6>CGV</h6>
+                    <a>when : 11/14 ~ 11/30<br>
+                        수능 수험생 모든 영화 7000원 관람 가능<br>
+                        수험생/청소년 대상 콤보 50% 할인 쿠폰 제공
+                    </a>
+                </div>
+                <div class="lotte">
+                    <h6>롯데시네마</h6>
+                    <a>when : 11/14 ~ 11/26<br>
+                        수험생/청소년 관람료 7000원 할인 프로모션<br>
+                        굿즈 콤보 6000원 할인 쿠폰 제공
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category hotel_category">
+            <button class="toggle_button">호텔</button>
+            <div class="content">
+                <div class="glad_hotel">
+                    <h6>글래드 호텔</h6>
+                    <a>글래드 여의도 레스토랑 '그리츠' 점심/저녁 수험생 본인 20% 할인</a>
+                </div>
+                <div class="sonointernational">
+                    <h6>소노 인터내셔널</h6>
+                    <a>when : 11/14 ~ 11/30<br>
+                        소노캄 고양 "셰프스키친" 수험생 본인 점심/저녁 뷔페 50% 할인
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "message">
+        <h3 id="title">이 페이지에 대하여..
+            <span id="toggleButton">+</span>
+        </h3>
+        <p id="message">
+            저는 고등학교 1학년 입니다<br>
+            지금 인생에서 최고로 큰 시험을 앞두고 있을,<br><br>
+            언니 오빠들을 진심으로 응원하고 싶어<br>
+            이 페이지를 개발하게 되었습니다.<br>
+            이렇게나마 응원이 되었으면 좋겠네요!!<br><br>
+            지난 12년을 위해 공부 하신 언니 오빠들 수고 하셨습니다<br>
+            내일 후회 없이 풀고 오길 진심으로 응원하고 기도하겠습니다!
+            <br><br>
+            화이팅!
+            <br>
+            <br>
+            -개발자 드림-
+        </p>
+        <div id = "href">
+            <a href = "https://www.instagram.com/el_.roi773/">instagram</a>
+            <a href = "https://github.com/elroi773">git</a>
+        </div>
+       
+
+    </div>
+   </div>
+    
+    <script src="수능응원페이지.js"></script>
+    
 </body>
 </html>
