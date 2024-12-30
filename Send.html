@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Example</title>
+</head>
+<body>
+      <!-- 사용자로부터 알림에 표시할 텍스트를 입력받는 입력 필드 -->
+      <input type="text" id="notificationInput" placeholder="Enter notification text">
+      <!-- 알림을 트리거하는 버튼 -->
+      <button id="notifyButton">Show Notification</button>
+  
+      <script>
+          // 버튼 클릭 시 실행될 이벤트 리스너를 등록
+          document.getElementById('notifyButton').addEventListener('click', () => {
+              // 입력 필드를 가져옴
+              const input = document.getElementById('notificationInput');
+              
+              // 브라우저 알림 권한 요청
+              Notification.requestPermission().then(permission => {
+                  // 권한이 'granted'인 경우 알림 생성
+                  if (permission === 'granted' && input.value) {
+                      new Notification(input.value); // 입력된 텍스트를 알림으로 표시
+                  } else if (!input.value) {
+                      // 입력값이 없는 경우 사용자에게 경고
+                      alert('Please enter text for the notification!');
+                  }
+              });
+          });
+      </script>
+  </body>
+  </html>
