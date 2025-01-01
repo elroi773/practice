@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드롭다운 메뉴</title>
+    <style>
+        @font-face {
+            font-family: 'ChosunGu';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body{
+            font-family: 'ChosunGu';
+        }
+        .dropdown{
+            display: inline-block;
+        }
+        .dropdown button{
+            font-family: 'ChosunGu';
+            background-color: hsl(0, 0%, 58%);
+            color: white;
+            padding:10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown a {
+            display:block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: black;
+            
+        }
+        .dropdown .content{
+            display: none;
+            position: absolute;
+            background-color: hsl(0, 0%, 90%);
+            min-width: 123px;
+            box-shadow: 2px 2px 5px hsla(0,0%,0%,0.4);
+        }
+        .dropdown:hover .content{
+            display: block;
+        }
+        .droprown:hover button{
+            background-color: hsl(0, 0%, 70%);
+        }
+
+        .dropdown a:hover{
+            background-color: hsl(0, 0%, 95%);
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button>좋아하는스포츠</button>
+        <div class="content">
+            <a href="https://www.lgtwins.com/service/html.ncd?view=/pc_twins/twins_main/twins_main">야구</a>
+            <a href="https://www.tottenhamhotspur.com/kr/">축구</a>
+            <a href="">테니스</a>
+        </div>
+    </div>
+</body>
+</html>
