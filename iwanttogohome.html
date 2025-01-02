@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'DeogonPrincess';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/DeogonPrincess.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        h2 {
+            font-family: 'DeogonPrincess';
+            color: red;
+            position: relative;
+        }
+
+        h2::after {
+            content: "도망가.....";
+        }
+
+        h2:hover::after {
+            content: "구라임 ㅋ";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home">
+        <h3>채이야 나 집에 가고싶어... <br>
+            <h2></h2>
+        </h3>
+    </div>
+</body>
+
+</html>
