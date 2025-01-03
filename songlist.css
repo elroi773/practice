@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.playlist {
+    list-style-type: none;
+    padding: 0;
+}
+
+.playlist li {
+    padding: 10px;
+    margin: 5px auto;
+    background: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 300px;
+}
+
+.playlist li:hover {
+    background: #0056b3;
+}
+
+#player-container {
+    margin-top: 20px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+#player-container.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+audio {
+    margin-top: 10px;
+}
