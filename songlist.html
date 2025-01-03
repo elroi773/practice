@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Playlist</title>
+    <link rel="stylesheet" href="songlist.css">
+
+</head>
+<body>
+    <h1>My Music Playlist</h1>
+    <ul class="playlist" id="playlist">
+        <li data-src="song1.mp3">Song 1</li>
+        <li data-src="song2.mp3">Song 2</li>
+        <li data-src="song3.mp3">Song 3</li>
+    </ul>
+    <div id="player-container">
+        <audio id="audioPlayer" controls>
+            <source src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script src ="songlist.js"></script>
+</body>
+</html>
