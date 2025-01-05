@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일</title>
+    <link rel="stylesheet" href="mobile1.css">
+</head>
+
+<body>
+    <div class="header">
+        <h2>Vine</h2>
+    </div>
+    <div class="Iamvine">
+        <h3>안녕하세요 노래로 <a class="bold">세상을 변화 시키고 싶은</a><br> 싱어송라이터 지망생 김바인입니다</h3>
+        <img src="images/Vine.jpg" class="Vinejpg">
+    </div>
+    <div class="playlist_div">
+        <h1>My Music Playlist</h1>
+        <ul class="playlist" id="playlist">
+            <li src = "/audio/goodluck!.mp3">Song 1</li>
+            <li data-src="song2.mp3">Song 2</li>
+            <li data-src="song3.mp3">Song 3</li>
+        </ul>
+        <div id="player-container">
+            <audio id="audioPlayer" controls>
+                <source src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <div class = "MBTI">
+        <h1>INTP</h1>
+    </div>
+    <div class = "whatcanido">
+        <a class = "icando">I can do</a>
+        <ul>
+            <li>Allrounder</li>
+            <li>Rock</li>
+            <li>Jazz</li>
+            <li>Ballade</li>
+            <li>K-pop</li>
+            <li>Indi</li>
+        </ul>
+    </div>
+    <script src ="mobile1.js"></script>
+</body>
+
+</html>
