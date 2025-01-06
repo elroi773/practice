@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        var price = 30000;
+        var service = 2;
+        if(service ==1){
+            service_result = "매우만족";
+            tip = price * 0.15;
+        }else if(service == 2){
+            service_result = "만족";
+            tip = price * 0.1;
+        }else {
+            service_result = "불만족";
+            tip = price * 0.05;
+        }
+        var message;
+        message = "음식값 : " + priece + "원 <br>";
+        message += "서비스 만족도 : " + service_result+"<br>";
+        message += "팁 : " + tip +"원";
+        document.getElementById("result").innerHTML = message;
+    </script>
+</body>
+</html>
