@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result">안녕하세요</p>
+    <h2>스타일 조작</h2>
+
+    <script>
+        var p1 = document.getElementById("result");
+        p1.style.color="red";
+        p1.style.fontFamily = "궁서";
+    </script>
+    <h2>텍스트 삽입</h2>
+    <script>
+        var p2 = document.getElementById("result");
+        p2.innerHTML = "";
+        p2.textContent = "";
+    </script>
+</body>
+</html>
