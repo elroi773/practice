@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CM to Inch Conversion Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">CM to Inch Conversion Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>CM</th>
+                <th>Inches</th>
+            </tr>
+        </thead>
+        <tbody id="conversion-table">
+           
+        </tbody>
+    </table>
+
+    <script>
+       
+        const tableBody = document.getElementById("conversion-table");
+
+        
+        for (let cm = 1; cm <= 100; cm++) {
+            const inches = (cm * 0.393701).toFixed(2); 
+            const row = `<tr><td>${cm}</td><td>${inches}</td></tr>`;
+            tableBody.innerHTML += row;
+        }
+    </script>
+</body>
+</html>
