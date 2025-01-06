@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person = {
+            name : "홍길동",
+            age : "25",
+            sayHello : function(){
+                document.write(this.name + "님 안녕하세욤!");
+            }
+        };
+
+        document.write("이름 : " + person.name + "<br>");
+        document.write("나이 : " + person.age + "<br>");
+        person.sayHello();
+
+
+        function Car(company,model,year){
+            this.company = company;
+            this.model = model;
+            this.year = year;
+        }
+
+        var car1 = new Car("현대","아반떼","2021"); 
+        document.write(car1.company + "/" + car1.model+"/"+car1.year);
+        document.write("<br>");
+
+    </script>
+</body>
+</html>
