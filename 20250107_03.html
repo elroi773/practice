@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>String 객체 메소드들</h2>
+    <script>
+        var str1 = "A friend in need is a fried indeed";
+        var str2 = new String("Hello");
+
+        document.write("결과 : " + str1.slice(2,8)+"<br>");
+        document.write("결과 : "+ str1.substr(4,8)+"<br>");
+        document.write("결과 : "+str1.replace("friednd","familly"));
+
+        var arr = str1.split(" ");
+        document.write("결과 : "+arr[1]+"<br>");
+    </script>
+</body>
+</html>
