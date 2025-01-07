@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Array 선언 및 메서드</h2>
+    <hr>
+    <script>
+        var animals = ["사자","호랑이","사슴","펭귄"];
+        var week = new Array("월","화","수","목","금","토","일");
+        document.write("결과 : "+animals.toStrnig()+"<br>");
+        document.write("결과 : "+week+"<br>");
+
+        animals.push("기린");
+        document.write("결과 : "+animals+"<br>");
+        animals.pop();
+        document.write("결과 : "+animals+"<br>");
+
+        animals[0] = "코알라";
+        document.write("결과 : "+animals+"<br>");
+        document.write("결과 : "+animals.length+"<br>");
+
+        animals.splice(2,2,"곰");
+        document.write("결과 : "+animals+"<br>");
+        animals.slice(2,3);
+        document.write("결과 : "+animals+"<br>");
+        week.sort();
+        doucment.write("결과 : "+week+"<br>");
+        week.reverse();
+        document.write("결과 : "+week+"<br>");
+
+        
+    </script>
+</body>
+</html>
