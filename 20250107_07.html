@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        $(function(){
+            $("*").css("color","brown");
+            $("div > span").css("fontFamily","궁서");
+            $("div > span").css("color","green");
+
+            $("div span").css("backgroundColor","yellow");
+
+
+            $("div li:eq(0)").css("backgroundColor","pink");
+            $("div li:filter").css("border","solid 2px red");
+            $("div li:last-child").css("backgroundColor","orange");
+            $("div li:nth-child(3)").css("text-decoration","underline");
+
+            $("li").parent().css("border","dotted");
+            $("h3").siblings().css("backgroundColor","gray");
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <h2>h2요소</h2>
+        <span>span 요소 1</span>
+        <span>span 요소 2</span>
+        <span>span 요소 3</span>
+    </div>
+
+    <div>
+        <h2>h2 요소 2</h2>
+        <p>p요소 
+            <span>span 요소 4</span>
+            <span>span 요소 5</span>
+            <span>span 요소 6</span>
+        </p>
+    </div>
+
+    <hr>
+    <h2>필터 선택자</h2>
+    <div>
+        <ul>
+            <li>항목1</li>
+            <li>항목2</li>
+            <li>항목3</li>
+            <li>항목4</li>
+            <li>항목5</li>
+        </ul>
+    </div>
+
+    <hr>
+    <h2>인접관계 선택자 : parent(),next,prev,children,siblings()..</h2>
+    <h2>형제 메서드</h2>
+    <p>타인</p>
+
+    <div>
+        <p>형제</p>
+        <span>형제2</span>
+        <h3>나</h3>
+        <h4>형제3</h4>
+        <p>형제4</p>
+    </div>
+
+</body>
+
+</html>
