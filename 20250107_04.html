@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Math 관련 메소드들</h2>
+
+    <script>
+        document.write("결과 : "+Math.round(5,3)+"<br>");
+        document.write("결과 : "+Math.pow(2,5)+"<br>");
+        document.write("결과 : "+Math.random()+"<br>");
+        document.write("결과 : "+Math.floor(Math.random()*10)+"<br>");
+        document.wrie("결과 : "+(Math.floor(Math.random()*10)+1)+"<br>");
+
+
+
+        var lotto =[];
+        for(var i =0; i<6; i++){
+            var num = Math.floor(Math.random()*45)+1;
+            for(var j in lotto){
+                while(num == lotto[j]){
+                    num = Math.floor(Math.random()*45+1);
+                }
+            }
+        }
+        document.write("결과 : "+lotto+"<br>");
+    </script>
+</body>
+</html>
