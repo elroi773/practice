@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 시작</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function f1() {
+            document.getElementById("a").style.color = "pink";
+            document.getElementById("a").style.backgroundColor = "yellow";
+        }
+
+        $(function () {
+           
+            $("#btn1").click(function () {
+                $("#b").css("color", "pink");
+                $("#b").css("background-color", "yellow");
+            });
+
+           
+            $("#btn2").click(function () {
+                $("p:nth-of-type(2)").css("color", "green");
+                $("p:nth-of-type(2)").css("background-color", "lightblue");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>자바스크립트로 제어하기</h2>
+    <p id="a">단락입니다</p>
+    <button onclick="f1()">버튼을 클릭하세요</button>
+
+    <h2>제이쿼리로 제어하기</h2>
+    <p>단락입니다1</p>
+    <button id="btn2">버튼을 클릭하세요</button>
+
+    <h2>css 스타일 메소드 조작</h2>
+    <h1 id="title">제목</h1>
+    
+    <script>
+        $("#title").css({
+            color:"red",
+            border:"1px solid red",
+            width:100,
+            height:100
+        });
+        $("h2").css("color","green").css("font-family","궁서").css("background-color","yelow");
+        
+    </script>
+</body>
+</html>
