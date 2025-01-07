@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Date 객체 다루기</h2>
+    <script>
+        var current = new Date();
+        var year = current.getFullYear();
+        var month = current.getMonth() + 1; 
+        var date = current.getDate();
+        var hour = current.getHours();
+        var minute = current.getMinutes();
+        var second = current.getSeconds();
+
+        if (second % 2 == 0) {
+            document.body.style.backgroundColor = "pink";
+        } else {
+            document.body.style.backgroundColor = "skyblue";
+        }
+
+        document.write("현재 날짜: " + year + "년 " + month + "월 " + date + "일<br>");
+        document.write("현재 시간: " + hour + "시 " + minute + "분 " + second + "초");
+    </script>
+</body>
+</html>
