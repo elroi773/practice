@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number 객체와 메서드들</title>
+</head>
+<body>
+    <h2>Number : 숫자를 문자열,문자열을 숫자로,자릿 고정</h2>
+    <hr>
+    <script>
+        //toString() 문자열로 변경하는 메서드 
+        var a = 10;
+        var b = 20;
+        c = a+b;
+        document.write("결과 : " + c + "<br>");
+        c = a+b.toString();
+        document.write("결과 : " + c + "<br>");
+
+        var x = 12.4763;
+        document.write("결과 : " + x.toFixed(3)+"<br>");
+
+        var y = "10.33";
+        document.write("결과 : " + parseInt(y) + "<br>");
+
+        var z = "com";
+        document.write("결과 : "+isNaN(Number(z))+"<br>");
+    </script>
+</body>
+</html>
