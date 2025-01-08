@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $("#box1").width("200").height("50"),css("border","3px solid blue"),css("backgroundColor","pink");
+            });
+            $("#btn2").click(function(){
+                var top1 = $("#box2").position().top;
+                $("#t1").text(top1);
+            })
+        });
+    </script>
+</head>
+<body>
+    <h2>크기 관련 조작 메소드</h2>
+    <p id="box1">박스 1</p>
+    <button id="btn1">크기 변경</button>
+    <h2>위치 관련 조작 메서드</h2>
+    <p id="t1"></p>
+    <div id="wrap">
+        <p id="box2">박스 2</p>
+    </div>
+    <button id="btn2">위치 알아보기</button>
+
+</body>
+</html>
