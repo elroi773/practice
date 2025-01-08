@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $("#box1").append("<p style = 'color:green'>뒤에 추가</p>");
+            });
+            $("#btn2").click(function(){
+                $("#list").prepend("<p style = 'color:green'>앞에 추가</p>");
+            });
+            $("#btn3").click(function(){
+                $("#pera").after("<p style = 'color:blue'>하나앞</p>")
+            });
+            $("#btn3").click(function(){
+                $("#pera").before("<p style = 'color:blue'>하나뒤</p>")
+            });
+            $("#btn5").click(function(){
+                $("#box2").remove();
+                $("#box1").remove();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>append</h2>
+    <div id="box1"></div>
+    <button id="btn1">요소 뒤에 추가 append</button>
+    <h2>prepend</h2>
+    <ul id="list">
+        <li>항목1</li>
+        <li>항목2</li>
+        <li>항목3</li>
+    </ul>
+    <button id="btn2">요소 앞에 추가 prepend</button>
+    <h2>before/after</h2>
+    <p id="para">기준</p>
+    <button id="btn3">하나앞에</button>
+    <button id="btn4">하나뒤에</button>
+    <h2>remove</h2>
+    <div id="box2"><p>안녕</p></div>
+    <button id = "btn5">제거</button>
+
+
+</body>
+</html>
