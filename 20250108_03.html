@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        .red{
+            color: white;
+            background-color: red;
+        }
+        .blue{
+            color: white;
+            background-color: blue;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("p").addClass("blue");
+            $("h2").addClass("red");
+
+            $("#btn").click(function(){
+                $("h2").removeClass("red");
+            });
+            $("#btn3").click(function(){
+                $("h2").toggleClass("red");
+                $("p").toggleClass("blue");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>addClass()</h2>
+    <h2>제목 1</h2>
+    <p>단락1</p>
+    <h2>제목2</h2>
+    <p>단락2</p>
+    <button id="btn1">클래스 추가하기</button>
+
+    <h2>removeClass()</h2>
+    <h2 class = "red">제목3</h2>
+    <p>단락 3</p>
+    <button id="btn2">클래스 제거하기</button>
+    <h2>toggleClass()</h2>
+    <button id="btn3">번갈아가면서 추가/제거</button>
+</body>
+</html>
