@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $("#p1").text("안녕하세요");
+            });
+            $("#btn2").click(function(){
+                $("#p2").text("<h3>안녕하세요</h3>");
+            });
+            $("#btn3").click(function(){
+                $("#p3").html("<span style = 'color:green'>반갑습니다</span>");
+            });
+            $("#btn4").click(function(){
+                $("#phone").val("010-1234-5678");
+            });
+            $("#btn5").click(function(){
+                $("#image").attr("src","img/chocho1.jpg");
+            });
+
+        });//제이쿼리 마감
+    </script>
+</head>
+<body>
+    <h2>텍스트 다루기 (설정)</h2>
+    <hr>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p>전화번호 : <input type="text" name = "phone"id = "phone"></p>
+    <button id = "btn1">text()</button>
+    <button id = "btn2">text()</button>
+    <button id = "btn3">html()</button>
+    <button id = "btn4">val()</button>
+
+    <h2>속성변경</h2>
+    <p><img src = "img/choco1.jpg" id = "image"></p>
+    <button id = "btn5">arr()</button>
+
+</body>
+</html>
