@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>새창 열기</h2>
+    <button>새창 열기 1</button>
+    <button>새창 열기 2</button>
+    <button>창 크기 조절</button>
+    <script>
+        function openWin1(){
+            window.open("20250106_03.html","mycat","width= 310, height =480,left=200,top=10,scrollbars=no")
+        }
+        var newWindow;
+        function openWin2(){
+            newWindow = window.open("","newin","width = 250, height = 80, left = 230,top = 100");
+            newWindow.document.write("<p>새 창이 열렸습니다</p>");
+        }
+    </script>
+</body>
+
+</html>
