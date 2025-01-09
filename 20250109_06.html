@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $("#tab_button").tabs();
+            $("#menu").menu();
+        });
+    </script>
+    <style>
+        .ui-menu{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="tab_button">
+        <ul>
+            <li><a href="">웹이란</a></li>
+            <li><a href="">웹브라우저</a></li>
+            <li><a href="">웹호스팅</a></li>
+        </ul>
+    </div>
+    <div id="tabs-1">
+        <p>내용은 찾아서 사용하기</p>
+    </div>
+    <div id="tabs-2">
+        <p>내용은 찾아서 사용하기</p>
+    </div>
+    <div id="tabs-3">
+        <p>내용은 찾아서 사용하기</p>
+    </div>
+
+    <h2>인터렉티브한 메뉴</h2>
+    <ul id="menu">
+        li.ul
+    </ul>
+</body>
+</html>
