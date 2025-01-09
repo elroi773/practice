@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 예제 사이드바 효과</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function () {
+
+            let sidebarVisible = true;
+
+            $(".page-main > aside button").click(function () {
+                if (sidebarVisible) {
+                   
+                    $(".page-main > aside").animate({ left: "-350px" }, 300);
+                    $(this).animate({ left: "0" }, 300);
+                } else {
+                  
+                    $(".page-main > aside").animate({ left: "0" }, 300);
+                    $(this).animate({ left: "350px" }, 300);
+                }
+                sidebarVisible = !sidebarVisible; 
+            });
+        });
+    </script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .page-main {
+            position: relative;
+        }
+
+        .page-main > aside {
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 350px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: fixed;
+            transition: left 0.3s ease;
+        }
+
+        .page-main > aside > ul {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+        }
+
+        .page-main > aside li {
+            margin: 0 0 20px;
+            list-style-type: none;
+        }
+
+        .page-main > aside button {
+            background-color: rgba(0, 0, 0, 0.8);
+            display: block;
+            position: absolute;
+            top: 50px;
+            left: 350px;
+            width: 52px;
+            height: 52px;
+            margin: 0;
+            padding: 0;
+            border: none;
+            cursor: pointer;
+        }
+
+        .page-main > aside button img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .page-main > aside ul img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-main">
+        <aside>
+            <ul>
+                <li><a href="#"><img src="images/Group1.png" alt="Icon 1"></a></li>
+                <li><a href="#"><img src="images/Group1.png" alt="Icon 2"></a></li>
+                <li><a href="#"><img src="images/Group1.png" alt="Icon 3"></a></li>
+            </ul>
+            <button><img src="images/Group1.png" alt="Toggle"></button>
+        </aside>
+    </div>
+</body>
+</html>
