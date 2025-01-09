@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 110px 30px 30px;
+        }
+        p{
+            line-height: 180%;
+        }
+        section{
+            margin-bottom: 300px;
+            border: 1px dotted #ccc;
+            height: 300px;
+        }
+        nav{
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: #404c5f;
+            position: fixed;
+            padding: 30px;
+        }
+        nav a {
+            padding: 20px 30px;
+            color: #fff;
+            text-decoration: none;
+        }
+        nav a:hover, nav a:focus{
+            color: white;            
+        }
+        nav a.active{
+            color: orange;
+        }
+
+    </style>
+    <script>
+        $(function(){
+            $(".nav a").click(function(){
+                $(".active").removeClass("active");
+                $(this).addClass("active");
+            });
+            $("html,body").stop().animate({
+                scrollTop : $($(this).attr("href")).offset().top-120
+            },300);
+        });
+    </script>
+</head>
+<body>
+    <nav class="nav">
+        <a href="" id="menu" class="active">웹이란</a>
+        <a href="" id="menu" >웹 브라우저</a>
+        <a href="" id="menu" >웹 호스팅</a>
+        <a href="" id="menu" >웹 프로그래밍</a>
+    </nav>
+
+    <section id = "link1">
+        <h2>웹이란</h2>
+        <p>거미줄 처럼 생긴 무언가를 지칭하는 말로 확장되고, 21세기에는 그냥 웹이라고 부르면 월드 와이드웹, 즉 인터넥을 의미한다
+            웹사이트라는 표현도 여기서 유래했다.
+        </p>
+    </section>
+    <section id = "link1">
+        <h2>웹브라우저</h2>
+        <p>거미줄 처럼 생긴 무언가를 지칭하는 말로 확장되고, 21세기에는 그냥 웹이라고 부르면 월드 와이드웹, 즉 인터넥을 의미한다
+            웹사이트라는 표현도 여기서 유래했다.
+        </p>
+    </section>
+    <section id = "link1">
+        <h2>웹 호스팅</h2>
+        <p>거미줄 처럼 생긴 무언가를 지칭하는 말로 확장되고, 21세기에는 그냥 웹이라고 부르면 월드 와이드웹, 즉 인터넥을 의미한다
+            웹사이트라는 표현도 여기서 유래했다.
+        </p>
+    </section>
+    <section id = "link1">
+        <h2>웹 프로그래밍</h2>
+        <p>거미줄 처럼 생긴 무언가를 지칭하는 말로 확장되고, 21세기에는 그냥 웹이라고 부르면 월드 와이드웹, 즉 인터넥을 의미한다
+            웹사이트라는 표현도 여기서 유래했다.
+        </p>
+    </section>
+</body>
+</html>
