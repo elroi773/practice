@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            var allPanels = $(".accordion dd");
+            allPanels.hide();
+
+            $(".accordion dt a").click(function(e){
+                e.preventDefault(); // 링크 기본 동작 방지
+                allPanels.slideUp(); // 모든 패널 닫기
+                $(this).parent().next("dd").slideDown(); // 클릭한 패널 열기
+            });
+        });
+    </script>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        .accordion {
+            margin: 30px;
+        }
+        .accordion dt, .accordion dd {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .accordion dt:last-of-type, .accordion dd:last-of-type {
+            border-bottom: 1px solid #ccc;
+        }
+        .accordion dt a {
+            display: block;
+            color: black;
+            font-weight: bold;
+        }
+        .accordion dd {
+            border-top: 0;
+            font-size: 14px;
+            line-height: 200%;
+        }
+    </style>
+</head>
+<body>
+    <h2>아코디언 효과</h2>
+    <dl class="accordion">
+        <dt><a href="#">웹이란</a></dt>
+        <dd>
+            웹은 www로 표현한다. 인터넷에 연결된 컴퓨터를 통해 전 세계 사람들이 
+            정보를 제공하고 공유할 수 있는 사이버 공간을 의미한다.
+        </dd>
+        <dt><a href="#">웹 브라우저란</a></dt>
+        <dd>
+            웹 브라우저는 사용자가 웹페이지를 볼 수 있도록 도와주는 소프트웨어다.
+        </dd>
+        <dt><a href="#">웹 호스팅이란</a></dt>
+        <dd>
+            웹 호스팅은 웹사이트를 인터넷에 게시할 수 있도록 서버 공간을 제공하는 서비스다.
+        </dd>
+    </dl>
+</body>
+</html>
