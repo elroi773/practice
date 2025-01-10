@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bxSlider Auto Slide Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <style>
+        #wrapper {
+            width: 600px;
+            margin: 0 auto;
+            border: 1px solid gray;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".bxslider").bxSlider({
+                mode: "horizontal", 
+                auto: true,         
+                pause: 3000,        
+                speed: 500,        
+                captions: true,    
+                controls: true,     
+                pager: true         
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <ul class="bxslider">
+            <li><img src="img/blue_bg.png" alt="Image 1"></li>
+            <li><img src="img/blue_bg.png" alt="Image 2"></li>
+            <li><img src="img/blue_bg.png" alt="Image 3"></li>
+            <li><img src="img/blue_bg.png" alt="Image 4"></li>
+        </ul>
+    </div>
+</body>
+</html>
