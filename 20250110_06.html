@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Function Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .scroll-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section1 {
+            background: pink;
+        }
+
+        .section2 {
+            background: rgb(151, 63, 78);
+        }
+
+        .section3 {
+            background: pink;
+        }
+
+        .section4 {
+            background: rgb(86, 43, 50);
+        }
+
+        .section5 {
+            background: rgb(109, 87, 91);
+        }
+
+        span {
+            font-size: 4em;
+            color: #fff;
+        }
+
+        section div{
+            font-family: "Open Sans";
+            font-style: normal;
+            text-align: center;
+            position: center;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Homepage</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="scroll-container section1">
+        <span>Page #1</span>
+    </div>
+    <div class="scroll-container section2">
+        <span>Page #2</span>
+    </div>
+    <div class="scroll-container section3">
+        <span>Page #3</span>
+    </div>
+    <div class="scroll-container section4">
+        <span>Page #4</span>
+    </div>
+    <div class="scroll-container section5">
+        <span>Page #5</span>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            let currentSection = 0;
+            const sections = $(".scroll-container");
+            const totalSections = sections.length;
+
+            function scrollToSection(index) {
+                $("html, body").animate(
+                    { scrollTop: sections.eq(index).offset().top },
+                    700
+                );
+            }
+
+            $(window).on("wheel", function (e) {
+                if (e.originalEvent.deltaY > 0) {
+                    // Scroll Down
+                    if (currentSection < totalSections - 1) {
+                        currentSection++;
+                        scrollToSection(currentSection);
+                    }
+                } else {
+                    // Scroll Up
+                    if (currentSection > 0) {
+                        currentSection--;
+                        scrollToSection(currentSection);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
