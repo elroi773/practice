@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Page Scroll Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .scroll-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section1 {
+            background: pink;
+        }
+
+        .section2 {
+            background: rgb(151, 63, 78);
+        }
+
+        .section3 {
+            background: pink;
+        }
+
+        .section4 {
+            background: rgb(86, 43, 50);
+        }
+
+        .section5 {
+            background: rgb(109, 87, 91);
+        }
+
+        span {
+            font-size: 4em;
+            color: #fff;
+        }
+
+        section div{
+            font-family: "Open Sans";
+            font-style: normal;
+            text-align: center;
+            position: center;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            let currentSection = 0;
+            const sections = $(".scroll-container");
+            const totalSections = sections.length;
+
+            function scrollToSection(index) {
+                $("html, body").animate(
+                    { scrollTop: sections.eq(index).offset().top },
+                    700
+                );
+            }
+
+            $(window).on("wheel", function (e) {
+                if (e.originalEvent.deltaY > 0) {
+                    // Scroll Down
+                    if (currentSection < totalSections - 1) {
+                        currentSection++;
+                        scrollToSection(currentSection);
+                    }
+                } else {
+                    // Scroll Up
+                    if (currentSection > 0) {
+                        currentSection--;
+                        scrollToSection(currentSection);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="scroll-container section1">
+        <span>Page #1</span>
+    </div>
+    <div class="scroll-container section2">
+        <span>Page #2</span>
+    </div>
+    <div class="scroll-container section3">
+        <span>Page #3</span>
+    </div>
+    <div class="scroll-container section4">
+        <span>Page #4</span>
+    </div>
+    <div class="scroll-container section5">
+        <span>Page #5</span>
+    </div>
+</body>
+
+</html>
