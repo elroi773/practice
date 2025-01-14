@@ -1,0 +1,262 @@
+@charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "맑은 고딕";
+    color: #333;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    border: none;
+}
+
+.header{
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1{
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gnb{
+    width: 600px;
+    height: 40px;
+}
+
+.gnb > ul{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.gnb > ul > li{
+    width: 150px;
+    height: 100%;
+    position: relative;
+}
+
+.mainnav{
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px;
+}
+
+.gnb>ul>li:hover .mainnnav{
+    background-color: #9365ed;
+    color: #fff;
+}
+
+.subnav{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    z-index: 50;
+    width: 100%;
+    background-color: #ededed;
+}
+
+.subnav a{
+    display: block;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.subnav a:hover{
+    background-color: #ff9995;
+    color: #fff;
+}
+
+.main{
+    width: 1200px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.main ul{
+    width: 100%;
+    height: 900px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.contents {
+    width: 1200px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* 섹션이 넘치면 다음 줄로 배치 */
+    gap: 20px; /* 섹션 간격 */
+}
+
+.board{
+    width: 400px;
+    height: 200px;
+    padding: 0 10px;
+}
+.btn{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #999;
+    display: flex;
+}
+
+.btn li{
+    width: 120px;
+    height: 100%;
+    line-height: 49px;
+}
+
+.btn a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #999;
+}
+.btn .active{
+    color: #fff;
+    background-color: #9865ed;
+}
+.bwrap{
+    width: 100%;
+    height: 150px;
+    padding-bottom: 10px;
+}
+.notice{
+    width: 100%;
+    height: 100%;
+}
+.notice ul{
+    width: 100%;
+    height: 100%;
+}
+.notice li{
+    width: 100%;
+    height: 20%;
+    line-height: 28px;
+    display: flex;
+    justify-content: space-between;
+}
+.notice a{
+    width: 250px;
+    height: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notice .date{
+    color: #999;
+}
+
+.gallery{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+.gallery ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.banner{
+    width: 400px;
+    height: 200px;
+}
+
+.now {
+    width: 30%; 
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.popup{
+    display: none;
+    width: 350px;
+    height: 350px;
+    border: 1px solid #999;
+    padding: 20px;
+    position:absolute;
+    top: 150px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 100;
+    background-color: #fff;
+}
+
+.popup h2{
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.popup p {
+    line-height: 21px;
+    margin-bottom: 10px;
+}
+button{
+    float: right;
+}
+
+.footer {
+    width: 100%;
+    margin: 20px 0 0 0;
+    background-color: #333;
+    color: #ccc;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.footer .sns {
+    display: flex;
+    gap: 15px;
+}
+
+.footer .sns a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+}
