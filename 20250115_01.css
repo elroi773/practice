@@ -1,0 +1,282 @@
+@charset "utf-8";
+
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+img{
+    border: none;
+    display: block;
+}
+
+.popup{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.pwrap{
+    position: absolute;
+    left: 350px;
+    top: 175px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #999999;
+    padding: 25px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.popup h2{
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.popup p{
+    font-size: 12px;
+    color: #666666;
+    line-height: 17px;
+    margin-bottom: 10px;
+}
+
+.poopup a{
+    display: block;
+    font-size: 12px;
+    text-align: center;
+}
+
+.bodywrap{
+    width: 1000px;
+    height: 650px;
+    display: flex;
+}
+
+.header{
+    width: 200px;
+    height: 650px;
+    background-color: #f99;
+}
+.header h1{
+    width: 100%;
+    height: 100px;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+.gnb{
+    width: 100%;
+    overflow: hidden;
+}
+
+.gnb > ul >li{
+    width: 100%;
+    overflow: hidden;
+}
+
+.mainnav{
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px solid #fff;
+}
+
+.gnb > ul>li:hover .mainnav{
+    background-color: #606;
+    color: #fff;
+}
+
+.subnav{
+    display: none;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.subnav a{
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.subnav a:hover{
+    background-color: #c39;
+    color: #fff;
+}
+
+.rightwrap{
+    width: 800px;
+    height: 650px;
+}
+
+.main{
+    width: 800px;
+    height: 350px;
+}
+
+.main ul{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.main li{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main .first{
+    display: block;
+}
+
+.contents{
+    width: 800px;
+    height: 200px;
+    display: flex;
+}
+
+.notice{
+    width: 300px;
+    height: 200px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.notice h3{
+    width: 100%;
+    height: 200px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.notice h3{
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border: 1px solid #999999;
+}
+
+.notice li{
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.notice a{
+    width: 250px;
+    height: 35px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.gallery{
+    width: 300px;
+    height: 200px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.gallery h3{
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: #606;
+    line-height: 49px;
+}
+
+.gallery ul{
+    padding: 25px 0;
+    display: flex;
+}
+
+.gallery .last{
+    margin-right: 0;
+}
+
+.banner{
+    width: 200px;
+    height: 200px;
+}
+
+.icon01{
+    display: flex;
+}
+
+.icon02{
+    display: flex;
+}
+
+.footer{
+    width: 800px;
+    height: 100px;
+    background-color: #ddd;
+    display: flex;
+}
+
+.fwrap{
+    width: 200px;
+    height: 100px;
+}
+
+.footer p {
+    width: 600px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.snsnav{
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.sns{
+    display: flex;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+
+#family{
+    cursor: pointer;
+    float: left;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+}
