@@ -1,0 +1,290 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary-color: #9ac3a1;
+    --secondary-color: #fff;
+    --text-color: #333;
+    --border-color: #999;
+    --hover-bg-color: #9ac3a1;
+    --hover-text-color: #fff;
+    --font-size-base: 16px;
+    --font-size-small: 12px;
+}
+
+/* 기본 스타일 초기화 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1.5;
+    font-family: 'GmarketSansMedium', sans-serif;
+    color: var(--text-color);
+    font-size: var(--font-size-base);
+}
+
+/* 리스트 스타일 초기화 */
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    border: none;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 팝업 스타일 */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.pwrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    box-sizing: border-box;
+    background-color: var(--secondary-color);
+}
+.popup h2 {
+    font-size: var(--font-size-small);
+    margin-bottom: 20px;
+}
+.popup p {
+    font-size: var(--font-size-small);
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+.popup a {
+    display: block;
+    font-size: var(--font-size-small);
+    text-align: center;
+}
+
+/* 레이아웃 스타일 */
+.bodywrap {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.logo_img {
+    width: 70px;
+    height: 70px;
+    margin-left: 10px;
+}
+.header {
+    width: 200px;
+    background-color: var(--secondary-color);
+}
+.header h1 {
+    height: 100px;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+.gnb {
+    width: 100%;
+}
+.gnb > ul > li {
+    width: 100%;
+}
+.mainnav {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px solid var(--secondary-color);
+    text-align: center;
+}
+.gnb > ul > li:hover .mainnav {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-text-color);
+}
+.subnav {
+    display: none;
+    width: 100%;
+    background-color: var(--secondary-color);
+}
+.subnav a {
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.subnav a:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-text-color);
+}
+.rightwrap {
+    flex: 1;
+    height: auto;
+}
+.main {
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+.main ul {
+    width: 100%;
+    height: 100%;
+}
+.main li {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.main .first {
+    display: block;
+}
+.book_gallery ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 230px 0 0;
+    justify-content: space-between;
+}
+.book_gallery li {
+    flex: 1 1 calc(25% - 10px);
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+.contents {
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 20px;
+}
+.notice {
+    width: 300px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.notice h3 {
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+}
+.notice li {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    font-size: var(--font-size-small);
+    display: flex;
+    justify-content: space-between;
+}
+.notice a {
+    width: calc(100% - 50px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.gallery {
+    width: 300px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.gallery h3 {
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    font-size: 18px;
+    color: #606;
+    line-height: 49px;
+}
+.gallery ul {
+    padding: 25px 0;
+    display: flex;
+}
+.banner {
+    width: 200px;
+    height: 200px;
+}
+.icon01, .icon02 {
+    display: flex;
+}
+.footer {
+    width: 100%;
+    max-width: 800px;
+    height: 100px;
+    background-color: #ddd;
+    display: flex;
+    margin: 0 auto;
+}
+.footer p {
+    flex: 1;
+    text-align: center;
+    line-height: 100px;
+}
+.sns {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+#family {
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+}
