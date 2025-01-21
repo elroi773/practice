@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Example</title>
+    <link rel="stylesheet" href="favsong.css">
+</head>
+<body>
+    
+    <h1>My Playlist</h1>
+    <ul class="playlist" id="playlist">
+        <li>
+            <div class="icon">
+                <img src="images/play-icon.png" alt="Play">
+            </div>
+            <span>오늘만 I luv u</span>
+            <audio src="audio/오늘만iluvu.mp3" data-lyrics="그날 이후로 난 이렇게 살아 \n웃기지 그런데\n오늘만 I love you  愛してる 사랑해라 말하고\n말하고 후회하면 좀 괜찮을까\nLove u!"></audio>
+        </li>
+        <li>
+            <div class="icon">
+                <img src="images/play-icon.png" alt="Play">
+            </div>
+            <span>Don't hang up</span>
+            <audio src="audio/끊었어Don'thangup.mp3" data-lyrics="Oh baby tell me why \n너가 클럽에서 나옴 어떡해\n우리 분명 어제 분위기 꽤 좋았잖아"></audio>
+        </li>
+        <li>
+            <div class="icon">
+                <img src="images/play-icon.png" alt="Play">
+            </div>
+            <span>Day and Night</span>
+            <audio src="audio/DayandNight.mp3" data-lyrics="미소 짓는 옛 추억 같이 \nDay and night\n 우린 그 거리 만큼\n 먼 길을 돌아 만나진 걸\n 꼭 안고 싶어\n네 지친 하루가 쉴 수 있는\n 꼭 나였으면 해 "></audio>
+        </li>
+    </ul>
+    
+
+    <div class="now-playing" id="nowPlaying">Now Playing: None</div>
+    <audio id="audioPlayer" controls>
+        Your browser does not support the audio element.
+    </audio>
+    <div class="lyrics" id="lyricsDisplay">Select a song to see the lyrics.</div>
+
+    <script src = "favsong.js">
+        
+    </script>
+</body>
+</html>
