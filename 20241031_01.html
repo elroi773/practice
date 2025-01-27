@@ -3,42 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>가상클래스</title>
+    <title>Document</title>
     <style>
-        a:link{
-            color:green;
-
+        @font-face {
+            font-family: 'GowunDodum-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
         }
-        a:hover{
-            color: red;
-            font-size: 1.1em;
+        html{
+            scroll-behavior: smooth;
         }
-        a:active{
-            color: blue;
-            font-size: 1.1em;
+        body{
+            font-family: 'GowunDodum-Regular';
         }
-        li:hover{
-            background-color: aqua;
-        }li:not(:hover){
-            background-color: gray;
+        p{
+            line-height: 1.7;
+            font-size: 1.5rem;
         }
-        li:nth-child(2n){
-            background-color: red;
+        img{
+            max-width: 100%;
+        }
+        h1{
+            text-align: center;
+            font-size: 5rem;
+        }
+        .hero-date{
+            font-family: 'GowunDodum-Regular';
+            font-size:2rem;
+        }
+        .wrapper{
+            max-width: 800px;
+            width: 100%;
+            margin:0 auto;
+        }
+        #hero{
+            background-color: #041d29;
+            background-image: url(images/river.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-blend-mode: screen;
+            backdrop-filter: blur(20px);
+            height: 100vh;
+            display: flex;
+            align-items: center;
         }
     </style>
 </head>
 <body>
-    <a href="https://www.google.com/">google</a>
-    <ul>
-        <li>This is #1</li>
-        <li>This is #2</li>
-        <li>This is #3</li>
-        <li>This is #4</li>
-        <li>This is #5</li>
-        <li>This is #6</li>
-        <li>This is #7</li>
-        <li>This is #8</li>
-        <li>This is #9</li>
-    </ul>
+    <section id = "hero">
+        <div class = "wrapper">
+            <h1>WCB Conference</h1>
+            <p class = "hero-date">2021.12.23 12:00-23:00</p>
+            <p>
+                온라인으로 개최되는 웹사이트 제작 설명회, WCB Conference
+                이번에는 최신 CSS 기술과 디자인 트렌드를 중심으로 소개 합니다. 
+                참가비는 무료! 누구든 환영합니다.
+            </p>
+        </div>
+    </section>
 </body>
 </html>
