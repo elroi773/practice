@@ -1,0 +1,129 @@
+<!--1403 김이레 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Layout</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: gray;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            background-color: black;
+            padding: 0 20px;
+        }
+
+        nav img {
+            max-width: 60px;
+            margin-right: 20px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        aside, section, article {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        aside {
+            width: 25%;
+            background-color: #f9f9f9;
+            float: left;
+        }
+
+        section {
+            flex: 1;
+            background-color: #f1f1f1;
+        }
+
+        article {
+            width: 30%;
+            background-color: #e9e9e9;
+        }
+
+        footer {
+            background-color: gray;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        @media screen and (max-width:600px){
+            aside,section,article{
+                width:100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Header</h2>
+    </header>
+
+    <nav>
+        <img src="images/2.jpg" alt="Site Logo">
+        <ul>
+            <li><a href="#">홈</a></li>
+            <li><a href="#">자기소개</a></li>
+            <li><a href="#">포트폴리오</a></li>
+            <li><a href="#">연락처</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <aside>
+            <h2>Aside</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis minima eveniet deleniti.</p>
+        </aside>
+        <section>
+            <h2>Section</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt ipsam odio eius.</p>
+        </section>
+        <article>
+            <h2>Article</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure unde, rerum voluptatibus quos aliquid.</p>
+        </article>
+    </main>
+
+    <footer>
+        <h2>Footer</h2>
+    </footer>
+</body>
+</html>
