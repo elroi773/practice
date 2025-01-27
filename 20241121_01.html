@@ -1,0 +1,55 @@
+<!--1403 김이레-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index</title>
+    <style>
+        *{
+            font-size: 24px;
+        }
+
+        div {
+            width:100px;
+            height: 100px;
+            position:relative;
+        }
+        div:nth-child(1){
+            background-color: yellow;
+            bottom:50px;
+        }
+        div:nth-child(2){
+            background-color: red;
+            bottom:100px;
+        }
+        div:nth-child(3){
+            background-color: blue;
+            bottom:150px;
+        }
+        div:nth-child(4){
+            background-color: green;
+            bottom:150px;
+        }
+
+        .first{
+            z-index: 1;
+        }
+        .second{
+            z-index:2;
+        }
+        .third{
+            z-index:3;
+        }
+        .fourth{
+            z-index:4;
+        }
+    </style>
+</head>
+<body>
+    <div class = "first">1</div>
+    <div class = "second">2</div>
+    <div class = "third">3</div>
+    <div class = "fourth">4</div>
+</body>
+</html>
