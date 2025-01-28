@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortable Table</title>
+    <link rel="stylesheet" href="Tables.css">
+    <script type="text/javascript" src="Tables.js" defer></script>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th onclick="sortRows('firstName', this)">
+                    First Name <i></i>
+                </th>
+                <th onclick="sortRows('lastName', this)">
+                    Last Name <i></i>
+                </th>
+                <th onclick="sortRows('level', this)">
+                    Level <i></i>
+                </th>
+                <th onclick="sortRows('age', this)">
+                    Age <i></i>
+                </th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+
+</html>
