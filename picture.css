@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+h1{
+    font-family: 'GmarketSansMedium';
+}
+
+body{
+    color: #616678;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table :is(th,td){
+    white-space: nowrap;
+    padding: 0 6px;
+    height: 40px;
+    font-size: 14px;
+}
+
+table th{
+    color: rgb(97 , 102, 120 / 45%);
+    cursor: pointer;
+    vertical-align: middle;
+    transition: 0.3s;
+}
+
+table th i {
+    font-size: 12px;
+}
+
+table th:is(.active, :hover){
+    color: inherit;
+}
+
+table td{
+    border-bottom: 1px solid #e9e5f3;
+}
+
+table tbody tr:last-child{
+    border: 0;
+}
+
+table tbody tr:nth-child(odd){
+    background: rgb(97 102 120 /4%);
+}
+
+
+body{
+    --color-bg:#16181b;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    height: 100vh;
+    padding: 0 50px;
+    background: var(--color-bg);
+}
+
+*{
+    scrollbar-color: transparent transparent;
+    scrollbar-width: 0px;
+}
+
+*::-webkit-scrollbar{
+    width: 0;
+}
+
+*::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+    background: transparent;
+    border: none;
+}
+
+ol,li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.carousel{
+    position: relative;
+    width: 100%;
+    height: 50vw;
+    perspective: 100px;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.viewport{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    overflow-x: scroll;
+    counter-reset: item;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel::before,.carousel::after{
+    content: "";
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    translate: -50% 0;
+    width: 500%;
+    height: 500%;
+    border-radius: 50%;
+    background: var(--color-bg);
+}
+
+.carousel::before{
+    top: 480%;
+}
+
+.carousel::after{
+    bottom: -480%;
+}
+
+.slide{
+    position: relative;
+    flex: 0 0 33.33%;
+    width: 33.33%;
+    counter-increment: item;
+}
+
+.snapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center; 
+    background-size: cover;
+    background-position: 50%;
+    border: 10px solid var(--color-bg);
+}
