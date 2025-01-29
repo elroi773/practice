@@ -96,15 +96,15 @@ ol,li{
     cursor: grab;
 }
 
-.viewport{
+.viewport {
     position: absolute;
     inset: 0;
     display: flex;
-    overflow-x: scroll;
-    counter-reset: item;
-    scroll-behavior: smooth;
+    overflow-x: scroll; /* 스크롤 가능 */
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 }
+
 
 .carousel::before,.carousel::after{
     content: "";
