@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>말씀 추천</title>
+    <link rel="stylesheet" href="bible.css">
+</head>
+<body>
+    <div class="container">
+        <h1>오늘의 말씀</h1>
+        <p id="verse">클릭하여 말씀을 받아보세요!</p>
+        <button onclick="getRandomVerse()">새로운 말씀</button>
+        <input type="text" id="newVerse" placeholder="새로운 말씀 추가" />
+        <button onclick="addVerse()">추가</button>
+    </div>
+
+    <script src="bible.js"></script>
+</body>
+</html>
