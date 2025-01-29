@@ -8,8 +8,13 @@
 </head>
 <body>
     <h1>My fav Movies</h1>
-    <section class = "carousel">
-        <ol class="viewport" tabindex="1">
+    <section class="carousel">
+        <ol class="viewport">
+            <!-- 마지막 슬라이드 복제 -->
+            <li class="slide clone">
+                <div class="snapper" style="background-image: url(images/13.jpg);"></div>
+            </li>
+            <!-- 실제 슬라이드 -->
             <li class="slide">
                 <div class="snapper" style="background-image: url(images/1.jpg);"></div>
             </li>
@@ -19,38 +24,19 @@
             <li class="slide">
                 <div class="snapper" style="background-image: url(images/3.jpg);"></div>
             </li>
-            <li class="slide">
-                <div class="snapper" style="background-image: url(images/4.jpg);"></div>
-            </li>
-            <li class="slide">
-                <div class="snapper" style="background-image: url(images/5.jpg);"></div>
-            </li>
-            <li class="slide">
-                <div class="snapper" style="background-image: url(images/6.jpg);"></div>
-            </li>
-            <li class="slide">
-                <div class="snapper" style="background-image: url(images/7.jpg);"></div>
-            </li>
-            <li class="slide">
-                <div class="snapper" style="background-image: url(images/8.jpg);"></div>
-            </li>
-            <li class="slide">
-                <div class="snapper" style="background-image: url(images/9.jpg);"></div>
-            </li>
-            <li class="slide">
-                <div class="snapper" style="background-image: url(images/10.jpg);"></div>
-            </li>
-            <li class="slide">
-                <div class="snapper" style="background-image: url(images/11.jpg);"></div>
-            </li>
+            <!-- ... 추가 슬라이드들 ... -->
             <li class="slide">
                 <div class="snapper" style="background-image: url(images/12.jpg);"></div>
             </li>
-            <li class="slide">
-                <div class="snapper" style="background-image: url(images/13.jpg);"></div>
+            <!-- 첫 번째 슬라이드 복제 -->
+            <li class="slide clone">
+                <div class="snapper" style="background-image: url(images/1.jpg);"></div>
             </li>
         </ol>
+        <button class="nav prev" aria-label="Previous">❮</button>
+        <button class="nav next" aria-label="Next">❯</button>
     </section>
+    
     <script src="picture.js"></script>
     
 </body>
