@@ -1,7 +1,7 @@
 
 async function searchImages() {
     const query = document.getElementById('search-box').value;
-    const accessKey = 'YOUR_UNSPLASH_ACCESS_KEY'; // Unsplash API 키 입력
+    const accessKey = 'KGfnTDNkCmbxzENH7vqE-ye_M0zUtCuqrfrTheTiNhw'; // Unsplash API 키 입력
     const url = `https://api.unsplash.com/search/photos?query=${query}&client_id=${accessKey}`;
 
     const response = await fetch(url);
