@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 필터 웹앱</title>
+    <link rel="stylesheet" href="Canva-api.css">
+</head>
+<body>
+    <h2>이미지 필터 적용 웹앱</h2>
+    <input type="file" id="upload" accept="image/*">
+    <canvas id="canvas"></canvas>
+    <div class="controls">
+        <button onclick="applyFilter('grayscale')">흑백</button>
+        <button onclick="applyFilter('invert')">반전</button>
+        <button onclick="applyFilter('blur')">블러</button>
+        <button onclick="applyFilter('none')">초기화</button>
+    </div>
+
+    <script src="Canva-api.js"></script>
+</body>
+</html>
