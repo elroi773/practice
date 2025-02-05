@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva API 이미지 검색</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #search-container {
+            margin: 20px;
+        }
+        #image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .image-item img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Canva API 이미지 검색</h1>
+    <div id="search-container">
+        <input type="text" id="search" placeholder="검색어 입력">
+        <button onclick="searchImages()">검색</button>
+    </div>
+    <div id="image-container"></div>
+
+    <script>
+        async function searchImages() {
+            const query = document.getElementById('search').value;
+            if (!query) {
+                alert('검색어를 입력하세요.');
+                return;
+            }
+
+            const apiKey = 'AAGePnUZUBQ';
+            const url = `https://api.canva.com/v1/images/search?q=${encodeURIComponent(query)}&apiKey=${apiKey}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                const imageContainer = document.getElementById('image-container');
+                imageContainer.innerHTML = '';
+                
+                data.results.forEach(image => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = image.url;
+                    imgElement.alt = image.title;
+                    const div = document.createElement('div');
+                    div.classList.add('image-item');
+                    div.appendChild(imgElement);
+                    imageContainer.appendChild(div);
+                });
+            } catch (error) {
+                console.error('이미지를 가져오는 중 오류 발생:', error);
+            }
+        }
+    </script>
+</body>
+</html>
