@@ -1,42 +1,93 @@
 @font-face {
-    font-family: 'PeoplefirstILTTF';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2501-1@1.1/PeoplefirstILTTF.woff2') format('woff2');
+    font-family: 'SSRONETHandwritten';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/SSRONETHandwritten.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
-*{
-    font-family: 'PeoplefirstILTTF';
+
+* {
+    font-family: 'SSRONETHandwritten';
 }
+
 body {
     text-align: center;
 }
 
 video,
-canvas,
-.preview-container {
+canvas {
     width: 100%;
     max-width: 400px;
+    border: 5px solid black;
+    border-radius: 10px;
 }
 
 button {
     margin-top: 10px;
     padding: 10px;
     font-size: 16px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .preview-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 420px;
 }
 
-.preview-container img {
-    width: 45%;
+.selected-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-container img,
+.selected-container img {
+    width: 100px;
+    height: 150px;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 5px solid transparent;
+    border-radius: 10px;
 }
 
 .preview-container img.selected {
-    border: 2px solid red;
+    border: 5px solid red;
+}
+
+#timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    margin-top: 10px;
+}
+
+#finalResult {
+    display: none;
+    margin-top: 20px;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+.frame {
+    border: 10px solid #FFD700;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: white;
 }
