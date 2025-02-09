@@ -1,4 +1,3 @@
-
 class Camera {
     constructor(videoElement) {
         this.videoElement = videoElement;
@@ -13,31 +12,38 @@ class Camera {
             console.error('카메라 접근 실패:', error);
         }
     }
-
-    stop() {
-        if (this.stream) {
-            this.stream.getTracks().forEach(track => track.stop());
-            this.videoElement.srcObject = null;
-        }
-    }
 }
 
 const video = document.getElementById('video');
 const captureButton = document.getElementById('capture');
 const previewContainer = document.getElementById('previewContainer');
+const selectedContainer = document.getElementById('selectedContainer');
 const finalizeButton = document.getElementById('finalize');
+const timerDisplay = document.getElementById('timer');
+const finalCanvas = document.getElementById('finalResult');
+const finalCtx = finalCanvas.getContext('2d');
 const camera = new Camera(video);
 
 camera.start();
 
 let capturedImages = [];
 
-// 8장 연속 촬영
 captureButton.addEventListener('click', async () => {
     capturedImages = [];
     previewContainer.innerHTML = '';
+    selectedContainer.innerHTML = '';
+    
+    for (let i = 8; i > 0; i--) {
+        timerDisplay.textContent = `촬영 시작: ${i}초 후`;
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    }
+    
+    timerDisplay.textContent = '';
+    
     for (let i = 0; i < 8; i++) {
-        await new Promise(resolve => setTimeout(resolve, 500)); // 0.5초 간격 촬영
+        timerDisplay.textContent = `${8 - i}장 남음`;
+        await new Promise(resolve => setTimeout(resolve, 2000)); // 2초 간격 촬영
+        
         const canvas = document.createElement('canvas');
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
@@ -50,29 +56,48 @@ captureButton.addEventListener('click', async () => {
         previewContainer.appendChild(img);
         capturedImages.push(img);
     }
+    
+    timerDisplay.textContent = '촬영 완료! 사진을 선택하세요';
     finalizeButton.style.display = 'block';
 });
 
 function toggleSelection(img) {
     img.classList.toggle('selected');
-    const selectedImages = document.querySelectorAll('.preview-container img.selected');
+    if (img.classList.contains('selected')) {
+        const selectedImg = img.cloneNode();
+        selectedImg.addEventListener('click', () => removeSelection(selectedImg, img));
+        selectedContainer.appendChild(selectedImg);
+    } else {
+        removeSelection(null, img);
+    }
+    updateFinalPreview();
+}
+
+function removeSelection(selectedImg, img) {
+    img.classList.remove('selected');
+    if (selectedImg) selectedContainer.removeChild(selectedImg);
+    updateFinalPreview();
+}
+
+function updateFinalPreview() {
+    const selectedImages = document.querySelectorAll('.selected-container img');
     finalizeButton.style.display = selectedImages.length === 4 ? 'block' : 'none';
+    if (selectedImages.length === 4) {
+        finalCanvas.width = video.videoWidth * 2;
+        finalCanvas.height = video.videoHeight * 2;
+        finalCtx.clearRect(0, 0, finalCanvas.width, finalCanvas.height);
+        selectedImages.forEach((img, index) => {
+            const x = (index % 2) * video.videoWidth;
+            const y = Math.floor(index / 2) * video.videoHeight;
+            const image = new Image();
+            image.src = img.src;
+            image.onload = () => finalCtx.drawImage(image, x, y, video.videoWidth, video.videoHeight);
+        });
+        finalCanvas.style.display = 'block';
+    }
 }
 
 finalizeButton.addEventListener('click', () => {
-    const selectedImages = document.querySelectorAll('.preview-container img.selected');
-    if (selectedImages.length !== 4) return;
-    const finalCanvas = document.createElement('canvas');
-    const ctx = finalCanvas.getContext('2d');
-    finalCanvas.width = video.videoWidth * 2;
-    finalCanvas.height = video.videoHeight * 2;
-    selectedImages.forEach((img, index) => {
-        const x = (index % 2) * video.videoWidth;
-        const y = Math.floor(index / 2) * video.videoHeight;
-        const image = new Image();
-        image.src = img.src;
-        image.onload = () => ctx.drawImage(image, x, y, video.videoWidth, video.videoHeight);
-    });
     const downloadLink = document.createElement('a');
     downloadLink.href = finalCanvas.toDataURL('image/png');
     downloadLink.download = 'final_photo.png';
