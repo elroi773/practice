@@ -8,9 +8,16 @@
 </head>
 <body>
     <h1>📸 인생네컷 카메라 앱</h1>
-    <video id="video" autoplay playsinline></video>
+    <div class="frame">
+        <video id="video" autoplay playsinline></video>
+    </div>
+    <div id="timer"></div>
     <button id="capture">8장 연속 촬영</button>
-    <div class="preview-container" id="previewContainer"></div>
+    <div class="container">
+        <div class="preview-container" id="previewContainer"></div>
+        <div class="selected-container" id="selectedContainer"></div>
+    </div>
+    <canvas id="finalResult"></canvas>
     <button id="finalize" style="display:none;">선택한 사진 다운로드</button>
     
     <script src="Camera.js"></script>
