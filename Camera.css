@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'PeoplefirstILTTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2501-1@1.1/PeoplefirstILTTF.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    font-family: 'PeoplefirstILTTF';
+}
+body {
+    text-align: center;
+}
+
+video,
+canvas,
+.preview-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
+
+.preview-container img {
+    width: 45%;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.preview-container img.selected {
+    border: 2px solid red;
+}
