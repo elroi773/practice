@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        여러개의 ｏｘ 문제에서 한 문제를 맞힐 경우에는 １점 부여하고 
+        연속적으로 맞히는 경우에는 가산점을 부여하고자 한다 
+        즉 １번 문제가 맞는 경우에는 １점,
+        앞의 문제를 틀렸거나 답이 맞는 경우에는 
+        두 문제는 2점, 세 문제는 3점 ...n 번째 문제는 n 점을 부여한다 틀린 문제는 0점으로 계산 
+    -->
+    <!-- <script>
+        function solution(arr){
+            let answer =0;
+            let count =0;
+
+            for(let i = 0; i < arr.length; i ++){
+                if(arr[i]==1){
+                    count++;
+                    answer += count;
+                }else{
+                    count = 0;
+                }
+            }
+            return answer;
+        }
+        let arr = [1,0,1,1,1,0,0,1,1,0];
+        console.log(solution(arr));
+        //경우의 수가 1,0 밖에 없기 때문에 count if 문 사용 
+    </script>  -->
+    <!-- mycode -->
+    <script>
+        function solution(arr){
+            let answer = 0, cnt = 0
+            for(let x of arr){ //x 가 알아서 arr 감 알잘딱
+                // console.log(x)
+                if(x === 1){
+                    count++;
+                    answer+=count;
+                }
+                else count = 0;
+            }
+            return answer;
+        }
+        let arr = [1,0,1,1,1,0,0,1,1,0];
+        console.log(solution(arr));
+        </script>
+</body>
+</html>
